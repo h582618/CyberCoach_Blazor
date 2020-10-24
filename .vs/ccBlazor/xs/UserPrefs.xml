@@ -1,0 +1,55 @@
+﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default">
+  <MonoDevelop.Ide.ItemProperties.ccBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/GenerateExercise.razor">
+    <Files>
+      <File FileName="wwwroot/css/site.css" Line="203" Column="27" IsPinned="True" />
+      <File FileName="Pages/Index.razor" Line="4" Column="1" IsPinned="True" />
+      <File FileName="Shared/NavMenu.razor" Line="19" Column="14" IsPinned="True" />
+      <File FileName="Pages/GenerateExercise.razor" Line="11" Column="73" IsPinned="True" />
+      <File FileName="Program.cs" Line="25" Column="12" />
+      <File FileName="Data/Splits/PPL.cs" Line="27" Column="87" />
+      <File FileName="Data/Splits/FB.cs" />
+      <File FileName="Data/Splits/UL.cs" />
+      <File FileName="Data/Splits/BS.cs" Line="1" Column="1" />
+      <File FileName="Pages/FetchData.razor" Line="17" Column="5" />
+      <File FileName="Shared/MainLayout.razor" Line="1" Column="1" />
+      <File FileName="Shared/SurveyPrompt.razor" Line="1" Column="1" />
+      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" Line="1" Column="1" />
+      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css.map" Line="1" Column="1" />
+      <File FileName="Data/Exercise.cs" Line="21" Column="10" NotebookId="1" />
+      <File FileName="Pages/Counter.razor" NotebookId="1" />
+      <File FileName="Pages/Welcome.razor" Line="31" Column="11" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ccBlazor" expanded="True">
+            <Node name="ccBlazor" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="Splits" expanded="True" />
+              </Node>
+              <Node name="Pages" expanded="True">
+                <Node name="GenerateExercise.razor" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Shared" expanded="True" />
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True">
+                  <Node name="bootstrap" expanded="True">
+                    <Node name="bootstrap.min.css" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

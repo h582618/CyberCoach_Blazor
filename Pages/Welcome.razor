@@ -1,0 +1,89 @@
+﻿@page "/welcome"
+<h4> Velkommen til CyberCoach</h4>
+@using System.ComponentModel.DataAnnotations;
+
+<EditForm Model="@welcomeScheme" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group row">
+        <label for="age" class="col-sm-2 col-form-label">
+            Alder
+        </label>
+        <InputNumber style="width:5%" id="age" @bind-Value="welcomeScheme.age"/>
+   
+    </div>
+    <div class="form-group row">
+        <label for="gender" class="col-sm-2 col-form-label">
+            Kjønn
+        </label>
+        <InputSelect @bind-Value="welcomeScheme.gender">
+            @foreach (var gender in Enum.GetValues(typeof(Gender)))
+            {
+                <option value="@gender">@gender</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="form-group row">
+        <label for="weight" class="col-sm-2 col-form-label">
+            Vekt
+        </label>
+        <InputNumber style="width:5%"id="weight" @bind-Value="welcomeScheme.weight" />
+    </div>
+    <div class="form-group row">
+        <label for="daysWeek" class="col-sm-2 col-form-label">
+            Antall økter i uken
+        </label>
+        <InputSelect id="daysWeek" @bind-Value="welcomeScheme.daysWeek">
+            @for(int i = 1; i < 8; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </InputSelect>
+    </div>
+    <button type="submit">Lag plan</button>
+</EditForm>
+@if(display == true)
+{
+    <GenerateExercise />
+    display = false;
+}
+
+@code {
+
+    private WeclomeScheme welcomeScheme = new WeclomeScheme();
+    private Boolean display { get; set; } = false;
+    private void HandleValidSubmit()
+    {
+        display = true;
+    }
+    public class WeclomeScheme
+    {
+        //[StringLength(10, ErrorMessage = "Name is too long.")]
+        [Required]
+        public Gender gender { get; set; }
+        [Required]
+        public int age { get; set; }
+        [Required]
+        public double weight { get; set; }
+        [Required]
+        public String daysWeek { get; set; }
+
+
+
+    }
+    public enum Gender
+    {
+        Mann,
+        Dame,
+        Annet
+    };
+    public enum Goal
+    {
+        Vektnedgang,
+        Muskeløkning,
+        Vedlikehold
+        
+    };
+
+
+}

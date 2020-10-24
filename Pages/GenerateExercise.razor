@@ -1,0 +1,55 @@
+﻿@page "/generateexercise"
+
+@if (exercisesGen != null)
+{
+    int v = 1;
+    @foreach (Data.Exercise t in exercisesGen)
+    {
+        if (t.newDay != null)
+        {
+          
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <p style="width:100%">               </p>
+            <div style="
+        text-align: center;
+        max-width: 100%;
+        display: inline-block;
+        "class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3> Dag @v :  @t.newDay </h3>
+                    </div>
+                </div>
+            </div>
+            v++;
+        }
+        else
+        {
+            <p> </p>
+            <div class="exercisesTxt">
+                <span class="exercises">
+
+                    <p style="font-weight: bold;">  @t.name</p>
+                    <p> Muscle targeted : @t.muscle_Targeted</p>
+                    <p> Equipment type : @t.equipment_Type</p>
+                    <p> 4 X 8</p>
+                    <img src="@t.src" width="200" height="200">
+
+                </span>
+            </div>
+            <p>   </p>
+
+
+        }
+    }
+}
+
+@code {
+
+
+    public static List<Data.Exercise> exercises = Data.Exercises.getExerises();
+    public static Data.Splits.PPL ppl = new Data.Splits.PPL(exercises);
+    public List<Data.Exercise> exercisesGen { get; set; } = ppl.PushPullLegs;
+
+
+}

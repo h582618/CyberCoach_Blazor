@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/matia/ccBlazor/ccBlazor.csproj": {}
+  },
+  "projects": {
+    "/Users/matia/ccBlazor/ccBlazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/matia/ccBlazor/ccBlazor.csproj",
+        "projectName": "ccBlazor",
+        "projectPath": "/Users/matia/ccBlazor/ccBlazor.csproj",
+        "packagesPath": "/Users/matia/.nuget/packages/",
+        "outputPath": "/Users/matia/ccBlazor/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/matia/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Json.Net": {
+              "target": "Package",
+              "version": "[1.0.23, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[2.15.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
