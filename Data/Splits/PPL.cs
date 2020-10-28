@@ -38,7 +38,7 @@ namespace ccBlazor.Data.Splits
             && !x.equipment_Type.Equals("Kettlebells") && !x.equipment_Type.Equals("Bands")
              && !x.equipment_Type.Equals("Medicine Ball"))
           .Distinct().Select(v => new { v, i = rnd.Next() })
-          .OrderBy(x => x.i).Take(3)
+          .OrderBy(x => x.i).Take(2)
           .Select(x => x.v);
 
             var triceps = exercises
@@ -48,7 +48,7 @@ namespace ccBlazor.Data.Splits
               && !x.equipment_Type.Equals("Kettlebells") && !x.equipment_Type.Equals("Bands")
                && !x.equipment_Type.Equals("Medicine Ball"))
             .Distinct().Select(v => new { v, i = rnd.Next() })
-            .OrderBy(x => x.i).Take(3)
+            .OrderBy(x => x.i).Take(2)
             .Select(x => x.v);
 
           

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ccBlazor.Data;
-
+using ViewModels;
 namespace ccBlazor
 {
     public class Startup
@@ -28,6 +28,22 @@ namespace ccBlazor
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            var assembly = AppDomain.CurrentDomain.GetAssemblies()
+             .Where(a => a
+             .FullName.StartsWith("ccBlazor"))
+             .First();
+            var classes = assembly.ExportedTypes
+               .Where(a => a.FullName.Contains("_Model"));
+            classes = classes.Union(assembly.ExportedTypes
+               .Where(a => a.FullName.Contains("_ViewModel")));
+            foreach (Type t in classes)
+            {
+                foreach (Type i in t.GetInterfaces())
+                {
+                    services.AddTransient(i, t);
+                }
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,5 +68,6 @@ namespace ccBlazor
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
+
     }
 }
