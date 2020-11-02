@@ -3,13 +3,13 @@
     {
         if (choice == currentChoice)
         {
-            <div class="radio" onclick=@MakeChoice.InvokeAsync(choice))>
+            <div class="radio" @onclick=@(()=>MakeChoice.InvokeAsync(choice)) >
                 <label><input type="radio" name="@radioName" checked>@choice</label>
             </div>
         }
         else
         {
-            <div class="radio" onclick=@MakeChoice.InvokeAsync(choice))>
+            <div class="radio" @onclick=@(()=>MakeChoice.InvokeAsync(choice)) >
                 <label><input type="radio" name="@radioName">@choice</label>
             </div>
         }

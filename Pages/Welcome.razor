@@ -1,6 +1,7 @@
 ﻿@page "/welcome"
 <h4> Velkommen til CyberCoach</h4>
 @using System.ComponentModel.DataAnnotations;
+@using ccBlazor.Components;
 
 <EditForm Model="@welcomeScheme" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -44,17 +45,23 @@
 </EditForm>
 @if(display == true)
 {
-    <GenerateExercise />
-    display = false;
+    <ccBlazor.Components.GenerateExercise days="daysWeek"> </ccBlazor.Components.GenerateExercise>
+   
 }
 
 @code {
-
+    
     private WeclomeScheme welcomeScheme = new WeclomeScheme();
     private Boolean display { get; set; } = false;
+    private int daysWeek { get; set; }
     private void HandleValidSubmit()
     {
         display = true;
+
+        daysWeek = Int16.Parse(welcomeScheme.daysWeek);
+        Console.WriteLine(daysWeek);
+
+
     }
     public class WeclomeScheme
     {
@@ -82,7 +89,7 @@
         Vektnedgang,
         Muskeløkning,
         Vedlikehold
-        
+
     };
 
 

@@ -1,0 +1,32 @@
+﻿@page "/checkboxlist"
+
+<div class="row">
+    <div class="col-md-6">
+        <RadzenCheckBoxList @bind-Value="values" TValue="int" Orientation="Orientation.Vertical" Change="@((args) => Change(args))">
+            <Items>
+                <RadzenCheckBoxListItem Text="Vektnedgang" Value="1" />
+                <RadzenCheckBoxListItem Text="Muskeløkning" Value="2" />
+                <RadzenCheckBoxListItem Text="Vedlikehold" Value="3" />
+                <RadzenCheckBoxListItem Text="Fettreduksjon" Value="4" />
+            </Items>
+        </RadzenCheckBoxList>
+        <br />
+    </div>
+</div>
+
+@code {
+    IEnumerable<int> values = new int[] { 1 };
+
+    [Parameter]
+    public List<int> events { get; set; }
+
+    void Change(IEnumerable<int> value)
+    {
+        foreach(int x in value)
+        {
+            Console.WriteLine(x);
+            events.Add(x);
+        }
+    }
+
+}

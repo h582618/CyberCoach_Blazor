@@ -13,12 +13,16 @@ namespace ccBlazor.Data.Splits
         }
         public PPL(List<Exercise> exercises)
         {
-            push(exercises);
-            pull(exercises);
-            legs(exercises);
+            push(exercises,"A");
+            pull(exercises, "A");
+            legs(exercises, "A");
+
+            push(exercises, "B");
+            pull(exercises, "B");
+            legs(exercises, "B");
 
         }
-        public List<Exercise> push(List<Exercise> exercises)
+        public List<Exercise> push(List<Exercise> exercises,String x)
         {
             Random rnd = new Random();
             var chest = exercises
@@ -28,7 +32,7 @@ namespace ccBlazor.Data.Splits
               && !x.equipment_Type.Equals("Kettlebells") && !x.equipment_Type.Equals("Bands")
                && !x.equipment_Type.Equals("Medicine Ball") && !x.equipment_Type.Equals("Exercise Ball"))
             .Distinct().Select(v => new { v, i = rnd.Next() })
-            .OrderBy(x => x.i).Take(3)
+            .OrderBy(x => x.i).Take(3).Distinct()
             .Select(x => x.v);
 
             var shoulders = exercises
@@ -53,14 +57,14 @@ namespace ccBlazor.Data.Splits
 
           
 
-            PushPullLegs.Add(new Exercise("Push"));
+            PushPullLegs.Add(new Exercise("Push " + x.ToUpper()));
             PushPullLegs.AddRange(chest);
             PushPullLegs.AddRange(shoulders);
             PushPullLegs.AddRange(triceps);
 
             return PushPullLegs;
         }
-        public List<Exercise> pull(List<Exercise> exercises)
+        public List<Exercise> pull(List<Exercise> exercises, String x)
         {
             Random rnd = new Random();
             var midBack = exercises
@@ -104,7 +108,7 @@ namespace ccBlazor.Data.Splits
             .OrderBy(x => x.i).Take(2)
             .Select(x => x.v);
 
-            PushPullLegs.Add(new Exercise("Pull"));
+            PushPullLegs.Add(new Exercise("Pull " + x.ToUpper()));
             PushPullLegs.AddRange(midBack);
             PushPullLegs.AddRange(lowBack);
             PushPullLegs.AddRange(upperBack);
@@ -113,7 +117,7 @@ namespace ccBlazor.Data.Splits
 
             return PushPullLegs;
         }
-        public List<Exercise> legs(List<Exercise> exercises)
+        public List<Exercise> legs(List<Exercise> exercises, String x)
         {
             Random rnd = new Random();
             var Quadriceps = exercises
@@ -153,7 +157,7 @@ namespace ccBlazor.Data.Splits
             .OrderBy(x => x.i).Take(2)
             .Select(x => x.v);
 
-            PushPullLegs.Add(new Exercise("Legs + Abs"));
+            PushPullLegs.Add(new Exercise("Legs + Abs " + x));
             PushPullLegs.AddRange(Quadriceps);
             PushPullLegs.AddRange(Hamstrings);
             PushPullLegs.AddRange(Calves);

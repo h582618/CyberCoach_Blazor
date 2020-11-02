@@ -1,28 +1,69 @@
 ﻿@page "/wizarddemo"
-    <ccBlazor.Components.Wizard Id="DemoWizard">
-        <ccBlazor.Components.WizardStep Name="First Step">
-            <div class="row">
-                <p>This is the first step. You can enter something useful in here.</p>
-            </div>
-        </ccBlazor.Components.WizardStep>
-        <ccBlazor.Components.WizardStep Name="Second Step">
-            <div class="row">
-                <p>Wow, you've reached the second step!</p>
-            </div>
-        </ccBlazor.Components.WizardStep>
-        <ccBlazor.Components.WizardStep Name="Final Step">
-            <div class="row">
-                <p>The final step has been reached. Thank you \o/</p>
-            </div>
-        </ccBlazor.Components.WizardStep>
-        <ccBlazor.Components.WizardStep Name="Final Final Step">
-            <div class="row">
-                <p>The final Final step has been reached. Thank you \o/</p>
-            </div>
-        </ccBlazor.Components.WizardStep>
-        <ccBlazor.Components.WizardStep Name="Final Final Final step">
-            <div class="row">
-                <p>The final Final final step has been reached. Thank you \o/</p>
-            </div>
-        </ccBlazor.Components.WizardStep>
-    </ccBlazor.Components.Wizard>
+@using ccBlazor.Components
+@inject PersonInf_Model ViewModel
+
+<ccBlazor.Components.Wizard Id="DemoWizard">
+    <ccBlazor.Components.WizardStep Name="Ditt personalia">
+        <div class="card-body">
+            <h5 class="card-title">Legg inn informasjon om deg</h5>
+            <p class="card-text">Navn</p>
+            <input type="text" value="@ViewModel.name" bind="@ViewModel.name"
+                   @onchange=@((ChangeEventArgs _e) => ViewModel.setName(_e.Value.ToString())) />
+        </div>
+        <div class="card-body">
+            <p class="card-text">Etternavn</p>
+            <input type="text" value="@ViewModel.surname" bind="@ViewModel.surname"
+                   @onchange=@((ChangeEventArgs _e) => ViewModel.setSurname(_e.Value.ToString())) />
+        </div>
+        <div class="card-body">
+            <p class="card-text">Alder</p>
+            <input type="number" value="@ViewModel.age" bind="@ViewModel.age"
+                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetAge(Int16.Parse(_e.Value.ToString()))) />
+        </div>
+        <div class="card-body">
+            <p class="card-text">Mail</p>
+            <input type="text" value="@ViewModel.mail" bind="@ViewModel.mail"
+                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetMail(_e.Value.ToString())) />
+        </div>
+        <div class="card-body">
+            <p class="card-text">Kjønn</p>
+            <RadioButtonList radioName="genderRadio" choices="@ViewModel.GenderChoices" currentChoice="@ViewModel.gender"
+                             MakeChoice="@ViewModel.SetGender" />
+        </div>
+
+
+
+
+    </ccBlazor.Components.WizardStep>
+    <ccBlazor.Components.WizardStep Name="Vekt og mål">
+        <div class="card-body">
+            <h5 class="card-title">Legg inn vekt og ønsket mål</h5>
+            <p class="card-text">Vekt</p>
+            <input type="number" value="@ViewModel.weight" bind="@ViewModel.weight"
+                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
+        </div>
+       
+        <Checkboxlist events="@ViewModel.goals" > </Checkboxlist>
+    </ccBlazor.Components.WizardStep>
+    <ccBlazor.Components.WizardStep Name="Muskelgrupper">
+        <div class="row">
+            <p>
+                Muskelgrupper
+            </p>
+        </div>
+    </ccBlazor.Components.WizardStep>
+    <ccBlazor.Components.WizardStep Name="Dager">
+        <div class="row">
+            <p>
+                Dager
+            </p>
+        </div>
+    </ccBlazor.Components.WizardStep>
+    <ccBlazor.Components.WizardStep Name="Kosthold">
+        <div class="row">
+            <p>
+                Kosthold
+            </p>
+        </div>
+    </ccBlazor.Components.WizardStep>
+</ccBlazor.Components.Wizard>

@@ -1,15 +1,23 @@
 ﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default">
   <MonoDevelop.Ide.ItemProperties.ccBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Wizard.razor">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Components/WizardStep.razor.cs">
     <Files>
-      <File FileName="Components/Wizard.razor" Line="15" Column="11" />
-      <File FileName="Components/Wizard.razor.cs" Line="1" Column="1" />
+      <File FileName="Program.cs" Line="35" Column="6" />
+      <File FileName="Pages/Welcome.razor" Line="3" Column="1" />
+      <File FileName="Pages/RadioButtonList.razor" Line="2" Column="40" />
+      <File FileName="_Imports.razor" Line="6" Column="43" />
+      <File FileName="Pages/WizardDemo.razor" Line="46" Column="38" />
+      <File FileName="Pages/checkboxlist.razor" Line="16" Column="7" />
       <File FileName="Components/WizardStep.razor" Line="1" Column="1" />
-      <File FileName="Components/WizardStep.razor.cs" Line="1" Column="1" />
-      <File FileName="Pages/Welcome.razor" Line="1" Column="1" />
-      <File FileName="Pages/Wizard.cs" Line="1" Column="1" />
-      <File FileName="Pages/WizardDemo.razor" Line="1" Column="1" />
-      <File FileName="Pages/Wizard.razor" Line="1" Column="1" />
+      <File FileName="Components/WizardStep.razor.cs" Line="25" Column="4" />
+      <File FileName="Components/GenerateExercise.razor.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="ccBlazor.csproj" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Startup.cs" Line="35" Column="50" NotebookId="1" />
+      <File FileName="Components/GenerateExercise.razor" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Components/Wizard.razor" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Data/Splits/PPL.cs" Line="137" Column="1" NotebookId="1" />
+      <File FileName="Pages/Index.razor" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Models/PersonInf_Model.cs" Line="78" Column="43" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,17 +25,27 @@
           <Node name="ccBlazor" expanded="True">
             <Node name="ccBlazor" expanded="True">
               <Node name="Components" expanded="True">
+                <Node name="GenerateExercise.razor" expanded="True" />
+                <Node name="PersonInf.razor" expanded="True" />
                 <Node name="Wizard.razor" expanded="True" />
-                <Node name="WizardStep.razor" expanded="True" />
+                <Node name="WizardStep.razor" expanded="True">
+                  <Node name="WizardStep.razor.cs" selected="True" />
+                </Node>
               </Node>
-              <Node name="Pages" expanded="True">
-                <Node name="Wizard.razor" selected="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Splits" expanded="True" />
               </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True" />
               <Node name="Shared" expanded="True" />
               <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True" />
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>SetGender</Value>
         </State>
       </Pad>
     </Pads>

@@ -9,7 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ccBlazor.Data;
-using ViewModels;
+using ccBlazor.ViewModels;
+using ccBlazor.Models;
+using ccBlazor.Components;
+
 namespace ccBlazor
 {
     public class Startup
@@ -25,14 +28,18 @@ namespace ccBlazor
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddTransient<PersonInf_Model>();
 
+
+            /*
             var assembly = AppDomain.CurrentDomain.GetAssemblies()
-             .Where(a => a
-             .FullName.StartsWith("ccBlazor"))
-             .First();
+               .Where(a => a
+               .FullName.StartsWith("ccBlazor"))
+               .First();
             var classes = assembly.ExportedTypes
                .Where(a => a.FullName.Contains("_Model"));
             classes = classes.Union(assembly.ExportedTypes
@@ -44,6 +51,8 @@ namespace ccBlazor
                     services.AddTransient(i, t);
                 }
             }
+            */
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
