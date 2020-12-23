@@ -1,6 +1,5 @@
 /Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/appsettings.Development.json
 /Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/appsettings.json
-/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
 /Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/ccBlazor.deps.json
 /Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/ccBlazor.runtimeconfig.json
 /Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/ccBlazor.runtimeconfig.dev.json
@@ -80,3 +79,5 @@
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Components/PersonInf.razor.g.cs
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Checkboxlist.razor.g.cs
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Checkboxlist.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/ccBlazor.RazorComponent.output.cache
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/scopedcss/bundle/ccBlazor.styles.css

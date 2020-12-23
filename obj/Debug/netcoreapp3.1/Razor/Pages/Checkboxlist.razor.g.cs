@@ -94,12 +94,10 @@ using Radzen.Blazor;
         {
             __builder.OpenElement(0, "div");
             __builder.AddAttribute(1, "class", "row");
-            __builder.AddMarkupContent(2, "\n    ");
-            __builder.OpenElement(3, "div");
-            __builder.AddAttribute(4, "class", "col-md-6");
-            __builder.AddMarkupContent(5, "\n        ");
-            __builder.OpenComponent<Radzen.Blazor.RadzenCheckBoxList<int>>(6);
-            __builder.AddAttribute(7, "Orientation", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.Orientation>(
+            __builder.OpenElement(2, "div");
+            __builder.AddAttribute(3, "class", "col-md-6");
+            __builder.OpenComponent<Radzen.Blazor.RadzenCheckBoxList<int>>(4);
+            __builder.AddAttribute(5, "Orientation", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Radzen.Orientation>(
 #nullable restore
 #line 5 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                            Orientation.Vertical
@@ -108,7 +106,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(8, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.IEnumerable<int>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.IEnumerable<int>>(this, 
+            __builder.AddAttribute(6, "Change", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.IEnumerable<int>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.IEnumerable<int>>(this, 
 #nullable restore
 #line 5 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                                                            (args) => Change(args)
@@ -117,7 +115,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             )));
-            __builder.AddAttribute(9, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<int>>(
+            __builder.AddAttribute(7, "Value", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Collections.Generic.IEnumerable<int>>(
 #nullable restore
 #line 5 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                          values
@@ -126,11 +124,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddAttribute(10, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.IEnumerable<int>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.IEnumerable<int>>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => values = __value, values))));
-            __builder.AddAttribute(11, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.Collections.Generic.IEnumerable<int>>>>(() => values));
-            __builder.AddAttribute(12, "Items", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.AddMarkupContent(13, "\n                ");
-                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_0(__builder2, 14, 15, "Vektnedgang", 16, 
+            __builder.AddAttribute(8, "ValueChanged", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.EventCallback<System.Collections.Generic.IEnumerable<int>>>(Microsoft.AspNetCore.Components.EventCallback.Factory.Create<System.Collections.Generic.IEnumerable<int>>(this, Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.CreateInferredEventCallback(this, __value => values = __value, values))));
+            __builder.AddAttribute(9, "ValueExpression", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Linq.Expressions.Expression<System.Func<System.Collections.Generic.IEnumerable<int>>>>(() => values));
+            __builder.AddAttribute(10, "Items", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_0(__builder2, 11, 12, "Vektnedgang", 13, 
 #nullable restore
 #line 7 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                   1
@@ -139,8 +136,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(17, "\n                ");
-                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_1(__builder2, 18, 19, "Muskeløkning", 20, 
+                __builder2.AddMarkupContent(14, "\n                ");
+                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_1(__builder2, 15, 16, "Muskeløkning", 17, 
 #nullable restore
 #line 8 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                    2
@@ -149,8 +146,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(21, "\n                ");
-                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_2(__builder2, 22, 23, "Vedlikehold", 24, 
+                __builder2.AddMarkupContent(18, "\n                ");
+                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_2(__builder2, 19, 20, "Vedlikehold", 21, 
 #nullable restore
 #line 9 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                   3
@@ -159,8 +156,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(25, "\n                ");
-                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_3(__builder2, 26, 27, "Fettreduksjon", 28, 
+                __builder2.AddMarkupContent(22, "\n                ");
+                __Blazor.ccBlazor.Pages.Checkboxlist.TypeInference.CreateRadzenCheckBoxListItem_3(__builder2, 23, 24, "Fettreduksjon", 25, 
 #nullable restore
 #line 10 "/Users/matia/ccBlazor/Pages/Checkboxlist.razor"
                                                                     4
@@ -169,13 +166,11 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddMarkupContent(29, "\n            ");
             }
             ));
             __builder.CloseComponent();
-            __builder.AddMarkupContent(30, "\n        <br>\n    ");
+            __builder.AddMarkupContent(26, "\n        <br>");
             __builder.CloseElement();
-            __builder.AddMarkupContent(31, "\n");
             __builder.CloseElement();
         }
         #pragma warning restore 1998

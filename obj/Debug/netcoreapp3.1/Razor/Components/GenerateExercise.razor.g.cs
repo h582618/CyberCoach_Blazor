@@ -101,7 +101,6 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             , 2, (__builder2) => {
-                __builder2.AddMarkupContent(3, "\n");
 #nullable restore
 #line 4 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
            List<Data.Exercise> exercisesGen = Generateexercises(days);
@@ -119,22 +118,19 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddMarkupContent(4, @"                        <link rel=""stylesheet"" href=""https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"" integrity=""sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"" crossorigin=""anonymous"">
+                __builder2.AddMarkupContent(3, @"<link rel=""stylesheet"" href=""https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"" integrity=""sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"" crossorigin=""anonymous"">
+                        <p style=""width:100%""></p>
                         ");
-                __builder2.AddMarkupContent(5, "<p style=\"width:100%\">               </p>\n                        ");
-                __builder2.OpenElement(6, "div");
-                __builder2.AddAttribute(7, "style", "\n        text-align: center;\n        max-width: 100%;\n        display: inline-block;\n        ");
-                __builder2.AddAttribute(8, "class", "container");
-                __builder2.AddMarkupContent(9, "\n                            ");
-                __builder2.OpenElement(10, "div");
-                __builder2.AddAttribute(11, "class", "row");
-                __builder2.AddMarkupContent(12, "\n                                ");
-                __builder2.OpenElement(13, "div");
-                __builder2.AddAttribute(14, "class", "col");
-                __builder2.AddMarkupContent(15, "\n                                    ");
-                __builder2.OpenElement(16, "h3");
-                __builder2.AddContent(17, " Dag ");
-                __builder2.AddContent(18, 
+                __builder2.OpenElement(4, "div");
+                __builder2.AddAttribute(5, "style", "\n        text-align: center;\n        max-width: 100%;\n        display: inline-block;\n        ");
+                __builder2.AddAttribute(6, "class", "container");
+                __builder2.OpenElement(7, "div");
+                __builder2.AddAttribute(8, "class", "row");
+                __builder2.OpenElement(9, "div");
+                __builder2.AddAttribute(10, "class", "col");
+                __builder2.OpenElement(11, "h3");
+                __builder2.AddContent(12, " Dag ");
+                __builder2.AddContent(13, 
 #nullable restore
 #line 24 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                               v
@@ -143,8 +139,8 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddContent(19, " :  ");
-                __builder2.AddContent(20, 
+                __builder2.AddContent(14, " :  ");
+                __builder2.AddContent(15, 
 #nullable restore
 #line 24 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                                     t.newDay
@@ -153,15 +149,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddContent(21, " ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(22, "\n                                ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(23, "\n                            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(24, "\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(25, "\n");
 #nullable restore
 #line 28 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                         v++;
@@ -172,18 +163,14 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddContent(26, "                        ");
-                __builder2.AddMarkupContent(27, "<p> </p>\n                        ");
-                __builder2.OpenElement(28, "div");
-                __builder2.AddAttribute(29, "class", "exercisesTxt");
-                __builder2.AddMarkupContent(30, "\n                            ");
-                __builder2.OpenElement(31, "span");
-                __builder2.AddAttribute(32, "class", "exercises");
-                __builder2.AddMarkupContent(33, "\n\n                                ");
-                __builder2.OpenElement(34, "p");
-                __builder2.AddAttribute(35, "style", "font-weight: bold;");
-                __builder2.AddContent(36, "  ");
-                __builder2.AddContent(37, 
+                __builder2.AddMarkupContent(16, "<p></p>\n                        ");
+                __builder2.OpenElement(17, "div");
+                __builder2.AddAttribute(18, "class", "exercisesTxt");
+                __builder2.OpenElement(19, "span");
+                __builder2.AddAttribute(20, "class", "exercises");
+                __builder2.OpenElement(21, "p");
+                __builder2.AddAttribute(22, "style", "font-weight: bold;");
+                __builder2.AddContent(23, 
 #nullable restore
 #line 36 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                                                  t.name
@@ -193,10 +180,10 @@ using Radzen.Blazor;
 #nullable disable
                 );
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(38, "\n                                ");
-                __builder2.OpenElement(39, "p");
-                __builder2.AddContent(40, " Muscle targeted : ");
-                __builder2.AddContent(41, 
+                __builder2.AddMarkupContent(24, "\n                                ");
+                __builder2.OpenElement(25, "p");
+                __builder2.AddContent(26, " Muscle targeted : ");
+                __builder2.AddContent(27, 
 #nullable restore
 #line 37 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                                        t.muscle_Targeted
@@ -206,10 +193,10 @@ using Radzen.Blazor;
 #nullable disable
                 );
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(42, "\n                                ");
-                __builder2.OpenElement(43, "p");
-                __builder2.AddContent(44, " Equipment type : ");
-                __builder2.AddContent(45, 
+                __builder2.AddMarkupContent(28, "\n                                ");
+                __builder2.OpenElement(29, "p");
+                __builder2.AddContent(30, " Equipment type : ");
+                __builder2.AddContent(31, 
 #nullable restore
 #line 38 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                                       t.equipment_Type
@@ -219,10 +206,10 @@ using Radzen.Blazor;
 #nullable disable
                 );
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(46, "\n                                ");
-                __builder2.AddMarkupContent(47, "<p> 4 X 8</p>\n                                ");
-                __builder2.OpenElement(48, "img");
-                __builder2.AddAttribute(49, "src", 
+                __builder2.AddMarkupContent(32, "\n                                ");
+                __builder2.AddMarkupContent(33, "<p> 4 X 8</p>\n                                ");
+                __builder2.OpenElement(34, "img");
+                __builder2.AddAttribute(35, "src", 
 #nullable restore
 #line 40 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
                                            t.src
@@ -231,15 +218,12 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
                 );
-                __builder2.AddAttribute(50, "width", "200");
-                __builder2.AddAttribute(51, "height", "200");
+                __builder2.AddAttribute(36, "width", "200");
+                __builder2.AddAttribute(37, "height", "200");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(52, "\n\n                            ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(53, "\n                        ");
                 __builder2.CloseElement();
-                __builder2.AddMarkupContent(54, "\n                        ");
-                __builder2.AddMarkupContent(55, "<p>   </p>\n");
+                __builder2.AddMarkupContent(38, "\n                        <p></p>");
 #nullable restore
 #line 45 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
 
@@ -251,7 +235,6 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-                __builder2.AddContent(56, "    ");
             }
             );
         }

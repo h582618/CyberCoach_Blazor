@@ -75,7 +75,6 @@ namespace ccBlazor.Components
             GenderChoices = new List<string>();
             GenderChoices.Add("Male");
             GenderChoices.Add("Female");
-
             GoalChoices = new List<string>();
             GoalChoices.Add("Vektnedgang");
             GoalChoices.Add("Muskeløkning");
@@ -84,6 +83,7 @@ namespace ccBlazor.Components
         }
         public void SetGender(string gender)
         {
+            Console.WriteLine(gender);
             this.gender = gender;
         }
         public void SetGoal(string goal)

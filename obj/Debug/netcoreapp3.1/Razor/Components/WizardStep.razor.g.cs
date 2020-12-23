@@ -99,9 +99,8 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(0, "    ");
-            __builder.OpenElement(1, "div");
-            __builder.AddAttribute(2, "id", "step-" + (
+            __builder.OpenElement(0, "div");
+            __builder.AddAttribute(1, "id", "step-" + (
 #nullable restore
 #line 3 "/Users/matia/ccBlazor/Components/WizardStep.razor"
                     Parent.StepsIndex(this) + 1
@@ -110,8 +109,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(3, "\n        ");
-            __builder.AddContent(4, 
+            __builder.AddContent(2, 
 #nullable restore
 #line 4 "/Users/matia/ccBlazor/Components/WizardStep.razor"
          ChildContent
@@ -120,9 +118,7 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             );
-            __builder.AddMarkupContent(5, "\n    ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(6, "\n");
 #nullable restore
 #line 6 "/Users/matia/ccBlazor/Components/WizardStep.razor"
 }

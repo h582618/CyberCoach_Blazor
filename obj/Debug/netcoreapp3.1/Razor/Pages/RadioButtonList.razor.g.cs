@@ -92,7 +92,6 @@ using Radzen.Blazor;
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
             __builder.OpenElement(0, "div");
-            __builder.AddMarkupContent(1, "\n");
 #nullable restore
 #line 2 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
      foreach (string choice in choices)
@@ -103,10 +102,9 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(2, "            ");
-            __builder.OpenElement(3, "div");
-            __builder.AddAttribute(4, "class", "radio");
-            __builder.AddAttribute(5, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.OpenElement(1, "div");
+            __builder.AddAttribute(2, "class", "radio");
+            __builder.AddAttribute(3, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 6 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                           ()=>MakeChoice.InvokeAsync(choice)
@@ -115,11 +113,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(6, "\n                ");
-            __builder.OpenElement(7, "label");
-            __builder.OpenElement(8, "input");
-            __builder.AddAttribute(9, "type", "radio");
-            __builder.AddAttribute(10, "name", 
+            __builder.OpenElement(4, "label");
+            __builder.OpenElement(5, "input");
+            __builder.AddAttribute(6, "type", "radio");
+            __builder.AddAttribute(7, "name", 
 #nullable restore
 #line 7 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                                   radioName
@@ -128,9 +125,9 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             );
-            __builder.AddAttribute(11, "checked", true);
+            __builder.AddAttribute(8, "checked", true);
             __builder.CloseElement();
-            __builder.AddContent(12, 
+            __builder.AddContent(9, 
 #nullable restore
 #line 7 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                                                       choice
@@ -140,9 +137,7 @@ using Radzen.Blazor;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(13, "\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(14, "\n");
 #nullable restore
 #line 9 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
         }
@@ -152,10 +147,9 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
-            __builder.AddContent(15, "            ");
-            __builder.OpenElement(16, "div");
-            __builder.AddAttribute(17, "class", "radio");
-            __builder.AddAttribute(18, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
+            __builder.OpenElement(10, "div");
+            __builder.AddAttribute(11, "class", "radio");
+            __builder.AddAttribute(12, "onclick", Microsoft.AspNetCore.Components.EventCallback.Factory.Create<Microsoft.AspNetCore.Components.Web.MouseEventArgs>(this, 
 #nullable restore
 #line 12 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                           ()=>MakeChoice.InvokeAsync(choice)
@@ -164,11 +158,10 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
             ));
-            __builder.AddMarkupContent(19, "\n                ");
-            __builder.OpenElement(20, "label");
-            __builder.OpenElement(21, "input");
-            __builder.AddAttribute(22, "type", "radio");
-            __builder.AddAttribute(23, "name", 
+            __builder.OpenElement(13, "label");
+            __builder.OpenElement(14, "input");
+            __builder.AddAttribute(15, "type", "radio");
+            __builder.AddAttribute(16, "name", 
 #nullable restore
 #line 13 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                                   radioName
@@ -178,7 +171,7 @@ using Radzen.Blazor;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddContent(24, 
+            __builder.AddContent(17, 
 #nullable restore
 #line 13 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
                                                               choice
@@ -188,9 +181,7 @@ using Radzen.Blazor;
 #nullable disable
             );
             __builder.CloseElement();
-            __builder.AddMarkupContent(25, "\n            ");
             __builder.CloseElement();
-            __builder.AddMarkupContent(26, "\n");
 #nullable restore
 #line 15 "/Users/matia/ccBlazor/Pages/RadioButtonList.razor"
         }

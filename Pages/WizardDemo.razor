@@ -1,69 +1,101 @@
-﻿@page "/wizarddemo"
+﻿@page "/"
 @using ccBlazor.Components
 @inject PersonInf_Model ViewModel
 
-<ccBlazor.Components.Wizard Id="DemoWizard">
-    <ccBlazor.Components.WizardStep Name="Ditt personalia">
-        <div class="card-body">
+<Wizard Id="DemoWizard">
+    <WizardStep Name="Ditt personalia">
+        <br /> 
+        <fieldset class="border p-2">
+            <br />
             <h5 class="card-title">Legg inn informasjon om deg</h5>
-            <p class="card-text">Navn</p>
-            <input type="text" value="@ViewModel.name" bind="@ViewModel.name"
-                   @onchange=@((ChangeEventArgs _e) => ViewModel.setName(_e.Value.ToString())) />
-        </div>
-        <div class="card-body">
-            <p class="card-text">Etternavn</p>
-            <input type="text" value="@ViewModel.surname" bind="@ViewModel.surname"
-                   @onchange=@((ChangeEventArgs _e) => ViewModel.setSurname(_e.Value.ToString())) />
-        </div>
-        <div class="card-body">
-            <p class="card-text">Alder</p>
-            <input type="number" value="@ViewModel.age" bind="@ViewModel.age"
-                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetAge(Int16.Parse(_e.Value.ToString()))) />
-        </div>
-        <div class="card-body">
-            <p class="card-text">Mail</p>
-            <input type="text" value="@ViewModel.mail" bind="@ViewModel.mail"
-                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetMail(_e.Value.ToString())) />
-        </div>
-        <div class="card-body">
-            <p class="card-text">Kjønn</p>
-            <RadioButtonList radioName="genderRadio" choices="@ViewModel.GenderChoices" currentChoice="@ViewModel.gender"
-                             MakeChoice="@ViewModel.SetGender" />
-        </div>
+
+            <div class="card-body">
+                <input placeholder="Navn" type="text" value="@ViewModel.name" bind="@ViewModel.name"
+                       @onchange=@((_e) => ViewModel.setName(_e.Value.ToString())) />
+            </div>
+            <div class="card-body">
+                <input placeholder="Etternavn" type="text" value="@ViewModel.surname" bind="@ViewModel.surname"
+                       @onchange=@((_e) => ViewModel.setSurname(_e.Value.ToString())) />
+            </div>
+            <div class="card-body">
+                <input placeholder="Alder" type="number" value="@(ViewModel.age != 0 ? ViewModel.age.ToString() : "" )"
+                       @onchange=@((_e) =>  ViewModel.SetAge(Int16.Parse(_e.Value.ToString().Trim()))) />
+            </div>
+            <div class="card-body">
+                <input placeholder="E-Mail" type="text" value="@ViewModel.mail" bind="@ViewModel.mail"
+                       @onchange=@((_e) => ViewModel.SetMail(_e.Value.ToString())) />
+            </div>
+
+            <div class="card-body">
+                <div class="btns">
+                    <h6 class="card-title">Velg kjønn</h6>
+                    <div class="kjonn">
+                        <label>
+                            <input type="radio" name="genderRadio" id="optionsRadios1" value="Female"
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString())) checked>
+                            <i class="zmdi zmdi-female zmdi-hc-5x"></i>
+                        </label>
+
+                    </div>
+                    <div class="kjonn">
+                        <label>
+                            <input type="radio" name="genderRadio" id="optionsRadios2" value="Male"
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString())) />
 
 
+                            <i class="zmdi zmdi-male-alt zmdi-hc-5x"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
+        </fieldset>
+        <br /> 
+    </WizardStep>
 
-    </ccBlazor.Components.WizardStep>
-    <ccBlazor.Components.WizardStep Name="Vekt og mål">
-        <div class="card-body">
+    <WizardStep Name="Vekt og mål">
+        <br />
+        <fieldset class="border p-2">
+
             <h5 class="card-title">Legg inn vekt og ønsket mål</h5>
-            <p class="card-text">Vekt</p>
-            <input type="number" value="@ViewModel.weight" bind="@ViewModel.weight"
-                   @onchange=@((ChangeEventArgs _e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
-        </div>
-       
-        <Checkboxlist events="@ViewModel.goals" > </Checkboxlist>
-    </ccBlazor.Components.WizardStep>
-    <ccBlazor.Components.WizardStep Name="Muskelgrupper">
-        <div class="row">
-            <p>
-                Muskelgrupper
-            </p>
-        </div>
-    </ccBlazor.Components.WizardStep>
-    <ccBlazor.Components.WizardStep Name="Dager">
-        <div class="row">
-            <p>
-                Dager
-            </p>
-        </div>
-    </ccBlazor.Components.WizardStep>
-    <ccBlazor.Components.WizardStep Name="Kosthold">
-        <div class="row">
-            <p>
-                Kosthold
-            </p>
-        </div>
-    </ccBlazor.Components.WizardStep>
-</ccBlazor.Components.Wizard>
+            <div class="card-body">
+                <p class="card-text">Vekt</p>
+                <input type="number" value="@ViewModel.weight" bind="@ViewModel.weight"
+                       @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
+            </div>
+            <div class="card-body">
+                <Checkboxlist events="@ViewModel.goals"> </Checkboxlist>
+            </div>
+        </fieldset>
+    </WizardStep>
+
+
+    <WizardStep Name="Muskelgrupper">
+        <br />
+        <fieldset class="border p-2">
+
+            <h5 class="card-title"> Velg dine svake punkter </h5>
+           
+        </fieldset>
+        <br/>
+    </WizardStep>
+
+
+
+    <WizardStep Name="Dager">
+        <br />
+        <fieldset class="border p-2">
+            <h5 class="card-title"> Dager </h5>
+         
+        </fieldset>
+            <br />
+</WizardStep>
+    <WizardStep Name="Kosthold">
+        <br />
+        <fieldset class="border p-2">
+            <h5 class="card-title"> Kosthold preferanser </h5>
+           
+        </fieldset>
+            <br />
+    </WizardStep>
+</Wizard>
