@@ -81,6 +81,7 @@ namespace ccBlazor.Components
             GoalChoices.Add(3,"Vedlikehold");
             GoalChoices.Add(4, "Fettreduksjon");
             goal = new List<int>();
+
         }
         public void SetGender(string gender)
         {

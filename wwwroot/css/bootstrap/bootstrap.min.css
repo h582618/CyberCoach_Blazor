@@ -5310,6 +5310,8 @@ a.badge-dark.focus, a.badge-dark:focus {
     display: block;
     padding: .75rem 1.25rem;
     margin-bottom: -1px;
+    width: 50%;
+    margin: auto;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125)
 }

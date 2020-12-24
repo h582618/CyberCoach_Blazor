@@ -294,7 +294,7 @@ input {
     margin: 0 auto;
     margin-bottom: 14px;
     display: block;
-    width: 100px;
+    width: 130px;
     font-family: 'Oswald', Helvetica, Arial, sans-serif;
     font-weight: normal;
     font-size: 14px;
@@ -310,6 +310,6 @@ input {
     margin: auto;
     padding: 0px;
     text-align: center;
-    
     background-repeat: no-repeat;
 }
+
