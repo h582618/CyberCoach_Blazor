@@ -155,7 +155,7 @@ a {
     }
 
     a:not([href]):not([tabindex]) {
-        color: inherit;
+        color: white;
         text-decoration: none
     }
 
@@ -8202,6 +8202,13 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     width: 70%;
     margin: auto;
 }
+
+.p-3 {
+    padding: .5rem !important;
+    width: 30%;
+    margin: auto;
+}
+
 
 .pt-2, .py-2 {
     padding-top: .5rem !important

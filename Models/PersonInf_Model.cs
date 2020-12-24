@@ -21,9 +21,9 @@ namespace ccBlazor.Components
         [Parameter]
         public String postnr { get; set; }
         [Parameter]
-        public String goal { get; set; }
+        public List<int> goal { get; set; }
         public List<string> GenderChoices { get; }
-        public List<string> GoalChoices { get; }
+        public Dictionary<int,string> GoalChoices { get; }
         public String gender { get; set; }
         public decimal weight { get; set; }
         public decimal height { get; set; }
@@ -75,21 +75,31 @@ namespace ccBlazor.Components
             GenderChoices = new List<string>();
             GenderChoices.Add("Male");
             GenderChoices.Add("Female");
-            GoalChoices = new List<string>();
-            GoalChoices.Add("Vektnedgang");
-            GoalChoices.Add("Muskeløkning");
-            GoalChoices.Add("Vedlikehold");
-            GoalChoices.Add("Fettreduksjon");
+            GoalChoices = new Dictionary<int,string>();
+            GoalChoices.Add(1,"Vektnedgang");
+            GoalChoices.Add(2,"Muskeløkning");
+            GoalChoices.Add(3,"Vedlikehold");
+            GoalChoices.Add(4, "Fettreduksjon");
+            goal = new List<int>();
         }
         public void SetGender(string gender)
         {
             Console.WriteLine(gender);
             this.gender = gender;
         }
-        public void SetGoal(string goal)
+        public void SetGoal(int goal, bool add)
         {
-            this.goal = goal;
-         
+            Console.WriteLine(goal + " " + add);
+            
+            if (add)
+            {
+                this.goal.Add(goal);
+            }
+            else
+            {
+                this.goal.Remove(goal);
+            }
+            Console.WriteLine(this.goal.Count);
         }
 
     }

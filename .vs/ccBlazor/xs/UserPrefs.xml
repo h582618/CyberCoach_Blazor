@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default">
   <MonoDevelop.Ide.ItemProperties.ccBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="wwwroot/css/bootstrap/bootstrap.min.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/WizardDemo.razor">
     <Files>
       <File FileName="Components/WizardStep.razor" Line="1" Column="1" IsPinned="True" />
       <File FileName="Pages/Welcome.razor" Line="26" Column="5" />
       <File FileName="Shared/NavMenu.razor" Line="7" Column="1" />
-      <File FileName="Pages/WizardDemo.razor" Line="25" Column="26" />
-      <File FileName="Models/PersonInf_Model.cs" Line="87" Column="34" />
+      <File FileName="Pages/WizardDemo.razor" Line="66" Column="36" />
       <File FileName="Models/PersonCalc_Model.cs" Line="21" Column="34" />
       <File FileName="Components/Wizard.razor" Line="1" Column="30" />
-      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" Line="2450" Column="1" />
+      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" Line="8205" Column="1" />
       <File FileName="_Imports.razor" Line="1" Column="1" />
-      <File FileName="wwwroot/css/site.css" Line="13" Column="31" NotebookId="1" />
+      <File FileName="wwwroot/css/site.css" Line="207" Column="2" NotebookId="1" />
       <File FileName="Pages/Index.razor" Line="5" Column="1" NotebookId="1" />
       <File FileName="Pages/_Host.cshtml" Line="38" Column="1" NotebookId="1" />
+      <File FileName="Models/PersonInf_Model.cs" Line="79" Column="28" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,13 +23,15 @@
               <Node name="Components" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="WizardDemo.razor" selected="True" />
+              </Node>
               <Node name="Shared" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True">
                   <Node name="bootstrap" expanded="True">
-                    <Node name="bootstrap.min.css" expanded="True" selected="True" />
+                    <Node name="bootstrap.min.css" expanded="True" />
                   </Node>
                   <Node name="open-iconic" expanded="True">
                     <Node name="font" expanded="True">

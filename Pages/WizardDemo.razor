@@ -4,7 +4,7 @@
 
 <Wizard Id="DemoWizard">
     <WizardStep Name="Ditt personalia">
-        <br /> 
+        <br />
         <fieldset class="border p-2">
             <br />
             <h5 class="card-title">Legg inn informasjon om deg</h5>
@@ -50,7 +50,7 @@
             </div>
 
         </fieldset>
-        <br /> 
+        <br />
     </WizardStep>
 
     <WizardStep Name="Vekt og mål">
@@ -59,12 +59,41 @@
 
             <h5 class="card-title">Legg inn vekt og ønsket mål</h5>
             <div class="card-body">
-                <p class="card-text">Vekt</p>
-                <input type="number" value="@ViewModel.weight" bind="@ViewModel.weight"
+
+                <input placeholder="Vekt" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
                        @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
             </div>
-            <div class="card-body">
-                <Checkboxlist events="@ViewModel.goals"> </Checkboxlist>
+            <div class="card-body1">
+                @foreach (KeyValuePair<int, string> g in ViewModel.GoalChoices)
+                {<div class="p-3">
+                        <label class="container">
+                            @g.Value
+                            <input type="checkbox" name="@g.Value" value="@g.Key"
+                                   @onchange=@((_e) => ViewModel.SetGoal(g.Key,bool.Parse(_e.Value.ToString())))>
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                }
+                <div class="card shadow border-0 mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="h4 mb-1">Choose from our pizzas</h2>
+                        <p class="small text-muted font-italic mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <ul class="list-group">
+                            @foreach (KeyValuePair<int, string> g in ViewModel.GoalChoices)
+                            {
+                                <li class="list-group-item rounded-0">
+                                    <div class="custom-control custom-checkbox">         
+                                        <input  id="@g.Key"  class="custom-control-input" type="checkbox" name="@g.Value" value="@g.Key"
+                                               @onchange=@((_e) => ViewModel.SetGoal(g.Key,bool.Parse(_e.Value.ToString())))>
+                                        <label class="cursor-pointer font-italic d-block custom-control-label" for="@g.Key"> @g.Value</label>
+                                    </div>
+                                </li>
+                            }
+                            </ul>
+                    </div>
+                </div>
+
+
             </div>
         </fieldset>
     </WizardStep>
@@ -75,9 +104,27 @@
         <fieldset class="border p-2">
 
             <h5 class="card-title"> Velg dine svake punkter </h5>
-           
+            <div class="card-body">
+
+
+                <div class="boxBody" style="background-image:url(@bodyPart)">
+
+                    <a class="boxBodyLink"
+                       @onmouseover="@skuldre" @onmouseout="neutral"> Skuldre</a>
+                    <a class="boxBodyLink"
+                       @onmouseover="@rygg" @onmouseout="neutral"> Rygg </a>
+                    <a class="boxBodyLink"
+                       @onmouseover="@bryst" @onmouseout="neutral"> Bryst</a>
+                    <a class="boxBodyLink"
+                       @onmouseover="@armer" @onmouseout="neutral"> Armer</a>
+                    <a class="boxBodyLink"
+                       @onmouseover="@rumpe" @onmouseout="neutral"> Rumpe</a>
+                    <a class="boxBodyLink"
+                       @onmouseover="@bein" @onmouseout="neutral"> Bein</a>
+                </div>
+            </div>
         </fieldset>
-        <br/>
+        <br />
     </WizardStep>
 
 
@@ -86,16 +133,62 @@
         <br />
         <fieldset class="border p-2">
             <h5 class="card-title"> Dager </h5>
-         
+
         </fieldset>
-            <br />
-</WizardStep>
+        <br />
+    </WizardStep>
     <WizardStep Name="Kosthold">
         <br />
         <fieldset class="border p-2">
             <h5 class="card-title"> Kosthold preferanser </h5>
-           
+
         </fieldset>
-            <br />
+        <br />
     </WizardStep>
 </Wizard>
+
+@code {
+
+
+
+    private static string[] bodyParts = { "Img/Armer.jpg", "Img/Skulder.jpg",
+                        "Img/Bein.jpg", "Img/Kjernen.jpg", "Img/Neutral.jpg",
+                           "Img/Rygg.jpg","Img/Bryst.jpg","Img/Rumpe.jpg"};
+
+
+    private string bodyPart = bodyParts[4];
+    public void neutral()
+    {
+        this.bodyPart = bodyParts[4];
+    }
+    public void skuldre()
+    {
+        this.bodyPart = bodyParts[1];
+    }
+    public void armer()
+    {
+        this.bodyPart = bodyParts[0];
+    }
+    public void bein()
+    {
+        this.bodyPart = bodyParts[2];
+    }
+    public void kjernen()
+    {
+        this.bodyPart = bodyParts[3];
+    }
+    public void rygg()
+    {
+        this.bodyPart = bodyParts[5];
+    }
+    public void bryst()
+    {
+        this.bodyPart = bodyParts[6];
+    }
+    public void rumpe()
+    {
+        this.bodyPart = bodyParts[7];
+    }
+
+
+} 

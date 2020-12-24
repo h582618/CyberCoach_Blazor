@@ -104,6 +104,56 @@ using ccBlazor.Components;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 150 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+       
+
+
+
+    private static string[] bodyParts = { "Img/Armer.jpg", "Img/Skulder.jpg",
+                        "Img/Bein.jpg", "Img/Kjernen.jpg", "Img/Neutral.jpg",
+                           "Img/Rygg.jpg","Img/Bryst.jpg","Img/Rumpe.jpg"};
+
+
+    private string bodyPart = bodyParts[4];
+    public void neutral()
+    {
+        this.bodyPart = bodyParts[4];
+    }
+    public void skuldre()
+    {
+        this.bodyPart = bodyParts[1];
+    }
+    public void armer()
+    {
+        this.bodyPart = bodyParts[0];
+    }
+    public void bein()
+    {
+        this.bodyPart = bodyParts[2];
+    }
+    public void kjernen()
+    {
+        this.bodyPart = bodyParts[3];
+    }
+    public void rygg()
+    {
+        this.bodyPart = bodyParts[5];
+    }
+    public void bryst()
+    {
+        this.bodyPart = bodyParts[6];
+    }
+    public void rumpe()
+    {
+        this.bodyPart = bodyParts[7];
+    }
+
+
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }
