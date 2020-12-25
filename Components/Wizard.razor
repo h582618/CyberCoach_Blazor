@@ -16,11 +16,11 @@
     <div class="btns">
         <button class="btn btn-primary btn-lg" type="button"
                 disabled="@(ActiveStepIx == 0)" @onclick="GoBack">
-            Previous
+            Tilbake
         </button>
         <button class="btn btn-primary btn-lg"
                 type="@(IsLastStep ? "submit" : "button")" @onclick="GoNext">
-            @(IsLastStep ? "Submit" : "Next")
+            @(IsLastStep ? "Send inn" : "Neste")
         </button>
     </div>
 </CascadingValue>

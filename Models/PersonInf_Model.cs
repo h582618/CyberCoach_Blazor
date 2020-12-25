@@ -13,24 +13,41 @@ namespace ccBlazor.Components
         [Parameter]
         public int mobile { get; set; }
         [Parameter]
-        public int age { get; set ; }
+        public int age { get; set; }
         [Parameter]
         public String mail { get; set; }
         [Parameter]
-        public String adresse { get; set; }
+        public String adress { get; set; }
         [Parameter]
         public String postnr { get; set; }
         [Parameter]
         public List<int> goal { get; set; }
         public List<string> GenderChoices { get; }
-        public Dictionary<int,string> GoalChoices { get; }
+        public Dictionary<int, string> GoalChoices { get; }
         public String gender { get; set; }
         public decimal weight { get; set; }
         public decimal height { get; set; }
-        public bool CheckBox1Value;
-        public bool? CheckBox2Value;
-        public bool? CheckBox3Value = true;
-        //Per nå er det en list emed
+
+        public int activityLevel {get; set; }
+
+        public bool weightLoss { get; set; } 
+        public bool muscleIncrease { get; set; } 
+        public bool maintenance { get; set; }
+        public bool fatLoss { get; set; }
+
+        public bool weaknessShoulder { get; set; }
+        public bool weaknessBack { get; set; }
+        public bool weaknessChest { get; set; }
+        public bool weaknessArms { get; set; }
+        public bool weaknessCore { get; set; }
+        public bool weaknessAss { get; set; }
+        public bool weaknessLegs { get; set; }
+
+        public int days { get; set; }
+        public List<String> preferedDays { get; }
+    
+
+       
         public List<int> goals { get; set; } = new List<int>();
 
 
@@ -82,6 +99,8 @@ namespace ccBlazor.Components
             GoalChoices.Add(4, "Fettreduksjon");
             goal = new List<int>();
 
+            preferedDays = new List<String>();
+
         }
         public void SetGender(string gender)
         {
@@ -102,6 +121,32 @@ namespace ccBlazor.Components
             }
             Console.WriteLine(this.goal.Count);
         }
+        public void setActivityLevel(String value)
+        {
+            this.activityLevel = int.Parse(value);
+        
+        }
+        public void setPreferedDays(String value, bool add)
+        {
+            if (!preferedDays.Contains(value) && days > preferedDays.Count )
+            {
+                this.preferedDays.Add(value);
+            }
+            else if(preferedDays.Contains(value))
+            {
+                this.preferedDays.Remove(value);
+            } else
+            {
+
+            } 
+        }
+
+        public void setDays(String value)
+        {
+            this.days = int.Parse(value);
+            Console.WriteLine(value);
+        }
+
 
     }
 

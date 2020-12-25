@@ -105,9 +105,12 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 143 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+#line 281 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
        
 
+    public bool Check(String value) {
+        return !(ViewModel.days > ViewModel.preferedDays.Count && ViewModel.preferedDays.Contains(value));
+    }
 
 
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",
@@ -151,6 +154,11 @@ using ccBlazor.Components;
     public void neutral()
     {
         this.bodyPart = bodyParts[7];
+    }
+
+    public void checkDays(EventArgs eventArgs)
+    {
+
     }
 
 

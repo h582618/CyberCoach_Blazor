@@ -7,7 +7,7 @@
         <br />
         <fieldset class="border p-2">
             <br />
-            <h5 class="card-title">Legg inn informasjon om deg</h5>
+            <h5 class="card-title">Vennligst fyll inn informasjon om deg</h5>
 
             <div class="card-body">
                 <input placeholder="Navn" type="text" value="@ViewModel.name" bind="@ViewModel.name"
@@ -25,6 +25,11 @@
                 <input placeholder="E-Mail" type="text" value="@ViewModel.mail" bind="@ViewModel.mail"
                        @onchange=@((_e) => ViewModel.SetMail(_e.Value.ToString())) />
             </div>
+            <div class="card-body">
+
+                <input placeholder="Vekt" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
+                       @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
+            </div>
 
             <div class="card-body">
                 <div class="btns">
@@ -32,7 +37,9 @@
                     <div class="kjonn">
                         <label>
                             <input type="radio" name="genderRadio" id="optionsRadios2" value="Male"
-                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString())) />
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
+                                    checked=@(ViewModel.gender=="Male")
+                                   />
 
 
                             <i class="zmdi zmdi-male-alt zmdi-hc-5x"></i>
@@ -41,7 +48,9 @@
                     <div class="kjonn">
                         <label>
                             <input type="radio" name="genderRadio" id="optionsRadios1" value="Female"
-                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))>
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
+                                  checked=@(ViewModel.gender=="Female")
+                                   >
                             <i class="zmdi zmdi-female zmdi-hc-5x"></i>
                         </label>
 
@@ -53,35 +62,45 @@
         <br />
     </WizardStep>
 
-    <WizardStep Name="Vekt og mål">
+    <WizardStep Name="Aktivitetsnivå og ønsket mål">
         <br />
         <fieldset class="border p-2">
-
-            <h5 class="card-title">Legg inn vekt I KG</h5>
-            <div class="card-body">
-
-                <input placeholder="Vekt" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
-                       @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
+            <h5 class="card-title"> Aktivitetsnivå</h5>
+            <div class="containerBody">
+                <ul class="ks-cboxtags">
+                    <li>
+                        <input type="radio" id="Minimal"
+                               value="1"
+                               @onchange=@((_e) => ViewModel.setActivityLevel(_e.Value.ToString()))
+                               checked=@(ViewModel.activityLevel == 1)><label for="Minimal">Minimalt, lite er eller ingen aktivitet </label>
+                    </li>
+                    <li>
+                        <input type="radio" id="Moderat" value="2"
+                               @onchange=@((_e) => ViewModel.setActivityLevel(_e.Value.ToString()))
+                               checked=@(ViewModel.activityLevel == 2)><label for="Moderat">Moderat, Gjenomsnittet aktiv</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="active" value="3"
+                               @onchange=@((_e) => ViewModel.setActivityLevel(_e.Value.ToString()))
+                               checked=@(ViewModel.activityLevel == 3)><label for="active">Aktiv, i bevegelse mesteparten av dagen</label>
+                    </li>
+                </ul>
             </div>
-          
-                    <div class="card-body p-5">
-                        <h2 class="h4 mb-1">Velg mål</h2>
-                        <ul class="list-group">
-                            @foreach (KeyValuePair<int, string> g in ViewModel.GoalChoices)
-                            {
-                                <li class="list-group-item rounded-0">
-                                    <div class="custom-control custom-checkbox">         
-                                        <input  id="@g.Key"  class="custom-control-input" type="checkbox" name="@g.Value" value="@g.Key"
-                                               @onchange=@((_e) => ViewModel.SetGoal(g.Key,bool.Parse(_e.Value.ToString())))>
-                                        <label class="cursor-pointer font-italic d-block custom-control-label" for="@g.Key"> @g.Value</label>
-                                    </div>
-                                </li>
-                            }
-                            </ul>
-                    </div>
+
+            <h5 class="card-title">Velg dine mål</h5>
+            <div class="containerBody">
+                <ul class="ks-cboxtags">
+                    <li><input type="checkbox" id="Vektnedgang" @bind="@ViewModel.weightLoss"><label for="Vektnedgang">Vektnedgang</label></li>
+                    <li><input type="checkbox" id="Muskeløkning" @bind="@ViewModel.muscleIncrease"><label for="Muskeløkning">Muskeløkning</label></li>
+                    <li><input type="checkbox" id="Vedlikehold" @bind="@ViewModel.maintenance"><label for="Vedlikehold">Vedlikehold</label></li>
+                    <li><input type="checkbox" id="Fettreduksjon" @bind="@ViewModel.fatLoss"><label for="Fettreduksjon">Fettreduksjon</label></li>
+                </ul>
+            </div>
+
 
 
         </fieldset>
+        <br />
     </WizardStep>
 
 
@@ -91,34 +110,44 @@
 
             <h5 class="card-title"> Velg dine svake punkter </h5>
             <div class="card-body">
-
-
                 <div class="boxBody" style="background-image:url(@bodyPart)">
-
-                    <label class="boxBodyLink" @onmouseover="@skuldre" @onmouseout="neutral">
-                        <input type="checkbox" /> <span>Skuldre</span>
-                    </label>
-                    <label class="boxBodyLink" @onmouseover="@rygg" @onmouseout="neutral">
-                        <input type="checkbox" /> <span>Rygg</span>
-                    </label> <label class="boxBodyLink" @onmouseover="@bryst" @onmouseout="neutral">
-                        <input type="checkbox" />  <span>Bryst</span>
-                    </label> <label class="boxBodyLink" @onmouseover="@armer" @onmouseout="neutral">
-                        <input type="checkbox" />  <span>Armer</span>
-                    </label> <label class="boxBodyLink" @onmouseover="@kjernen" @onmouseout="neutral">
-                        <input type="checkbox" />   <span>Kjernen</span>
-                    </label> <label class="boxBodyLink" @onmouseover="@rumpe" @onmouseout="neutral">
-                        <input type="checkbox" />  <span>Rumpe</span>
-                    </label> <label class="boxBodyLink" @onmouseover="@bein" @onmouseout="neutral">
-                        <input type="checkbox" />   <span>Bein</span>
-                    </label>
-                    <br />
-
-
+                    <div class="containerBody">
+                        <ul class="ks-cboxtags2">
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessShoulder" id="Skuldre" />
+                                <label for="Skuldre" @onmouseover="@skuldre" @onmouseout="neutral"> Skuldre</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessBack" id="Rygg" />
+                                <label for="Rygg" @onmouseover="@rygg" @onmouseout="neutral"> Rygg</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessChest" id="Bryst" />
+                                <label for="Bryst" @onmouseover="@bryst" @onmouseout="neutral"> Bryst</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessArms" id="Armer" />
+                                <label for="Armer" @onmouseover="@armer" @onmouseout="neutral"> Armer</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessCore" id="kjernen" />
+                                <label for="kjernen" @onmouseover="@kjernen" @onmouseout="neutral"> Kjernen</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessAss" id="Rumpe" />
+                                <label for="Rumpe" @onmouseover="@rumpe" @onmouseout="neutral"> Rumpe</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" @bind="@ViewModel.weaknessLegs" id="Bein" />
+                                <label for="Bein" @onmouseover="@bein" @onmouseout="neutral"> Bein</label>
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
                 </div>
             </div>
-            <br />
         </fieldset>
-
+        <br />
     </WizardStep>
 
 
@@ -126,7 +155,114 @@
     <WizardStep Name="Dager">
         <br />
         <fieldset class="border p-2">
-            <h5 class="card-title"> Dager </h5>
+   
+            <h5 class="card-title"> Antall dager i uken</h5>
+            <div class="containerBody">
+                <ul class="ks-cboxtags4">
+                    <li>
+                        <input type="radio" id="1" value="1"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 1)>
+                        <label for="1">1</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="2" value="2"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 2)>
+                        <label for="2">2</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="3" value="3"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 3)>
+                        <label for="3">3</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="4" value="4"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 4)>
+                        <label for="4">4</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="5" value="5"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 5)>
+                        <label for="5">5</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="6" value="6"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 6)>
+                        <label for="6">6</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="7" value="7"
+                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
+                               checked=@(ViewModel.days == 7)>
+                        <label for="7">7</label>
+                    </li>
+                </ul>
+            </div>
+
+
+            <h5 class="card-title"> Velg dine ønskede treningsdager </h5>
+            <div class="card-body">
+                <div class="containerBody">
+                    <ul class="ks-cboxtags3">
+                        <li>
+                            <input type="checkbox" id="monday" value="monday"
+                            @onchange=@((_e) => ViewModel.setPreferedDays("monday",(bool)_e.Value))
+                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("monday"))"
+                                   />
+                            <label for="monday"> Mandag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="tuesday" value="tuesday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("tuesday",(bool)_e.Value))
+                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("tuesday"))"
+                                   />
+                            <label for="tuesday"> Tirsdag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="wednesday" value="wednesday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("wednesday",(bool)_e.Value))
+                               disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("wednesday"))"
+                                  />
+                            <label for="wednesday"> Onsdag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="thursday" value="thursday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("thursday",(bool)_e.Value))
+                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("thursday"))"
+                                  /> 
+                            <label for="thursday"> Torsdag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="friday" value="friday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("friday",(bool)_e.Value))
+                            disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("friday"))"
+                                  /> 
+                            <label for="friday"> Fredag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="saturday" value="saturday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("saturday",(bool)_e.Value))
+                                disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("saturday"))"
+                                  /> 
+                            <label for="saturday"> Lørdag</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="sunday"  value="sunday"
+                                     @onchange=@((_e) => ViewModel.setPreferedDays("sunday",(bool)_e.Value))
+                            disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("sunday"))"
+                                  /> 
+                            <label for="sunday"> Søndag</label>
+                        </li>
+                    </ul>
+                    <br />
+                </div>
+            </div>
+
 
         </fieldset>
         <br />
@@ -143,8 +279,7 @@
 
 @code {
 
-
-
+   
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",
                         "Img/Bryst.jpg", "Img/Armer.jpg", "Img/Kjernen.jpg",
                         "Img/Rumpe.jpg", "Img/Bein.jpg",
@@ -186,6 +321,11 @@
     public void neutral()
     {
         this.bodyPart = bodyParts[7];
+    }
+
+    public void checkDays(EventArgs eventArgs)
+    {
+
     }
 
 
