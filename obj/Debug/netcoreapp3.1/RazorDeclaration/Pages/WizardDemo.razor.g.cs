@@ -105,12 +105,8 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 281 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+#line 332 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
        
-
-    public bool Check(String value) {
-        return !(ViewModel.days > ViewModel.preferedDays.Count && ViewModel.preferedDays.Contains(value));
-    }
 
 
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",
@@ -118,6 +114,33 @@ using ccBlazor.Components;
                         "Img/Rumpe.jpg", "Img/Bein.jpg",
                         "Img/Neutral.jpg" };
 
+    private String allergy;
+
+    public String dislike;
+
+    public bool allergies { get; set; } = false;
+
+    public bool foodDislikes { get; set; } = false;
+
+    public void addAllergy()
+    {
+        if (!string.IsNullOrWhiteSpace(allergy))
+        {
+            ViewModel.addAllergy(char.ToUpper(allergy[0]) + allergy.Substring(1));
+            allergy = String.Empty;
+        }
+
+    }
+
+    public void addDislikes()
+    {
+        if (!string.IsNullOrWhiteSpace(dislike))
+        {
+            ViewModel.addDislikes(char.ToUpper(dislike[0]) + dislike.Substring(1));
+            dislike = String.Empty;
+        }
+
+    }
 
 
     private string bodyPart = bodyParts[7];

@@ -156,106 +156,72 @@
         <br />
         <fieldset class="border p-2">
    
-            <h5 class="card-title"> Antall dager i uken</h5>
+            <h5 class="card-title"> Antall trenings dager i uken</h5>
             <div class="containerBody">
                 <ul class="ks-cboxtags4">
+                    @for(int i = 1; i <= 7; i++){
                     <li>
-                        <input type="radio" id="1" value="1"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 1)>
-                        <label for="1">1</label>
+                        <input type="radio" id="@i" value="@i"
+                               @onchange=@((_e) => ViewModel.setTrainingDays(_e.Value.ToString()))
+                               checked=@(ViewModel.trainingDays == @i)>
+                        <label for="@i">@i</label>
                     </li>
-                    <li>
-                        <input type="radio" id="2" value="2"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 2)>
-                        <label for="2">2</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="3" value="3"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 3)>
-                        <label for="3">3</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="4" value="4"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 4)>
-                        <label for="4">4</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="5" value="5"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 5)>
-                        <label for="5">5</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="6" value="6"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 6)>
-                        <label for="6">6</label>
-                    </li>
-                    <li>
-                        <input type="radio" id="7" value="7"
-                               @onchange=@((_e) => ViewModel.setDays(_e.Value.ToString()))
-                               checked=@(ViewModel.days == 7)>
-                        <label for="7">7</label>
-                    </li>
+                    }
                 </ul>
             </div>
 
 
-            <h5 class="card-title"> Velg dine ønskede treningsdager </h5>
+            <h6 class="card-title"> Velg dine ønskede treningsdager </h6>
             <div class="card-body">
                 <div class="containerBody">
                     <ul class="ks-cboxtags3">
                         <li>
                             <input type="checkbox" id="monday" value="monday"
                             @onchange=@((_e) => ViewModel.setPreferedDays("monday",(bool)_e.Value))
-                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("monday"))"
-                                   />
+                           disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("monday"))"
+                             checked=@(ViewModel.preferedDays.Contains("monday"))       />
                             <label for="monday"> Mandag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="tuesday" value="tuesday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("tuesday",(bool)_e.Value))
-                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("tuesday"))"
-                                   />
+                           disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("tuesday"))"
+                                  checked=@(ViewModel.preferedDays.Contains("tuesday"))  />
                             <label for="tuesday"> Tirsdag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="wednesday" value="wednesday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("wednesday",(bool)_e.Value))
-                               disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("wednesday"))"
-                                  />
+                               disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("wednesday"))"
+                                checked=@(ViewModel.preferedDays.Contains("wednesday"))   />
                             <label for="wednesday"> Onsdag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="thursday" value="thursday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("thursday",(bool)_e.Value))
-                           disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("thursday"))"
-                                  /> 
+                           disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("thursday"))"
+                             checked=@(ViewModel.preferedDays.Contains("thursday"))      /> 
                             <label for="thursday"> Torsdag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="friday" value="friday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("friday",(bool)_e.Value))
-                            disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("friday"))"
-                                  /> 
+                            disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("friday"))"
+                            checked=@(ViewModel.preferedDays.Contains("friday"))      /> 
                             <label for="friday"> Fredag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="saturday" value="saturday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("saturday",(bool)_e.Value))
-                                disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("saturday"))"
-                                  /> 
+                                disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("saturday"))"
+                                checked=@(ViewModel.preferedDays.Contains("saturday"))   /> 
                             <label for="saturday"> Lørdag</label>
                         </li>
                         <li>
                             <input type="checkbox" id="sunday"  value="sunday"
                                      @onchange=@((_e) => ViewModel.setPreferedDays("sunday",(bool)_e.Value))
-                            disabled="@((ViewModel.days <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("sunday"))"
-                                  /> 
+                            disabled="@((ViewModel.trainingDays <= ViewModel.preferedDays.Count) && !ViewModel.preferedDays.Contains("sunday"))"
+                                checked=@(ViewModel.preferedDays.Contains("sunday"))   /> 
                             <label for="sunday"> Søndag</label>
                         </li>
                     </ul>
@@ -271,7 +237,93 @@
         <br />
         <fieldset class="border p-2">
             <h5 class="card-title"> Kosthold preferanser </h5>
+            <br/>
+            <div class="containerBody">
+                <h6 class="card-title"> Har du allergier? </h6>
+                <ul class="ks-cboxtags4">
+                    <li>
+                        <input type="radio" id="allergies" @onclick="() => allergies = true"
+                               checked="@allergies" />
+                        <label for="allergies"> Yes </label>
+                    </li>
 
+                    <li>
+                        <input type="radio" id="noAllergies" @onclick="() => allergies = false"
+                               checked="@(!allergies)" />
+                        <label for="noAllergies"> No </label>
+                    </li>
+
+                </ul>
+                @if (allergies)
+                {
+                    <div class="card-body">
+                        <h6 class="card-title"> Legg inn allergier </h6>
+                        <input class="allergyInput" placeholder="allergi" type="text" @bind="allergy" />
+                        <button class="btn btn-primary" @onclick="addAllergy"> legg til </button>
+                        <ul class="ks-cboxtagsAllergies">
+                            @foreach (var allergy in ViewModel.allergys)
+                            {
+                                <li>
+                                    <input type="checkbox" id="@allergy" value="@allergy" @onclick="() => ViewModel.removeAllergy(allergy)" />
+                                    <label for="@allergy"> @allergy</label>
+
+                                </li>
+
+
+                            }
+                        </ul>
+
+                    </div>
+                }
+                <h5 class="card-title"> Er det noe mat du ikke liker? </h5>
+                <ul class="ks-cboxtags4">
+                    <li>
+                        <input type="radio" id="dislikeFood" @onclick="() => foodDislikes = true"
+                               checked="@foodDislikes" />
+                        <label for="dislikeFood"> Yes </label>
+                    </li>
+
+                    <li>
+                        <input type="radio" id="likeFood" @onclick="() => foodDislikes = false"
+                               checked="@(!foodDislikes)" />
+                        <label for="likeFood"> No </label>
+                    </li>
+
+                </ul>
+                @if (foodDislikes)
+                {
+            <div class="card-body">
+                <h6 class="card-title"> Legg inn mat </h6>
+                <input class="allergyInput" placeholder="" type="text" @bind="dislike" />
+                <button class="btn btn-primary" @onclick="addDislikes"> legg til </button>
+                <ul class="ks-cboxtagsAllergies">
+                    @foreach (var dislikeVar in ViewModel.disLikes)
+                    {
+                        <li>
+                            <input type="checkbox" id="@dislikeVar" value="@dislikeVar" @onclick="() => ViewModel.removeDislike(allergy)" />
+                            <label for="@dislikeVar"> @dislikeVar</label>
+
+                        </li>
+
+
+                    }
+                </ul>
+
+            </div>
+                }
+                <h5 class="card-title"> Velg antall måltider per dag </h5>
+                <ul class="ks-cboxtags4">
+                    @for (int i = 1; i <= 7; i++)
+                    {
+                        <li>
+                            <input type="radio" id="@i" value="@i"
+                                   @onchange=@((_e) => ViewModel.setMealAmount(_e.Value.ToString()))
+                                   checked=@(ViewModel.mealAmount == @i)>
+                            <label for="@i">@i</label>
+                        </li>
+                    }
+                </ul>
+            </div>
         </fieldset>
         <br />
     </WizardStep>
@@ -279,12 +331,39 @@
 
 @code {
 
-   
+
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",
                         "Img/Bryst.jpg", "Img/Armer.jpg", "Img/Kjernen.jpg",
                         "Img/Rumpe.jpg", "Img/Bein.jpg",
                         "Img/Neutral.jpg" };
 
+    private String allergy;
+
+    public String dislike;
+
+    public bool allergies { get; set; } = false;
+
+    public bool foodDislikes { get; set; } = false;
+
+    public void addAllergy()
+    {
+        if (!string.IsNullOrWhiteSpace(allergy))
+        {
+            ViewModel.addAllergy(char.ToUpper(allergy[0]) + allergy.Substring(1));
+            allergy = String.Empty;
+        }
+
+    }
+
+    public void addDislikes()
+    {
+        if (!string.IsNullOrWhiteSpace(dislike))
+        {
+            ViewModel.addDislikes(char.ToUpper(dislike[0]) + dislike.Substring(1));
+            dislike = String.Empty;
+        }
+
+    }
 
 
     private string bodyPart = bodyParts[7];

@@ -279,6 +279,7 @@ input {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+  
 }
 
 #path3 .color {
@@ -313,7 +314,11 @@ input {
     background-repeat: no-repeat;
 }
 
-
+.allergyInput {
+    width:20%;
+    font-size:inherit;
+    h
+}
 
 .containerBody {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -523,11 +528,13 @@ ul.ks-cboxtags3 {
             transition: all .2s;
             width: 100px;
             margin: auto;
+          
         }
 
         ul.ks-cboxtags3 li label {
             padding: 8px 12px;
             cursor: pointer;
+           
         }
 
             ul.ks-cboxtags3 li label::before {
@@ -541,6 +548,7 @@ ul.ks-cboxtags3 {
                 font-size: 12px;
                 padding: 2px 6px 2px 2px;
                 transition: transform .3s ease-in-out;
+                float: right;
             }
 
         ul.ks-cboxtags3 li input[type="checkbox"]:checked + label::before {
@@ -644,3 +652,77 @@ ul.ks-cboxtags4 {
             }
 
 
+ul.ks-cboxtagsAllergies {
+    list-style: none;
+    padding: 20px;
+}
+
+
+
+    ul.ks-cboxtagsAllergies li {
+        display: inline;
+    }
+
+        ul.ks-cboxtagsAllergies li label {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, .9);
+            border: 2px solid rgba(139, 139, 139, .3);
+            color: #adadad;
+            border-radius: 25px;
+            white-space: nowrap;
+            margin: 3px 0px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: all .2s;
+            width: 100px;
+            margin: auto;
+        }
+
+        ul.ks-cboxtagsAllergies li label {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+            ul.ks-cboxtagsAllergies li label::before {
+                display: inline-block;
+                font-style: normal;
+                font-variant: normal;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 12px;
+                padding: 2px 6px 2px 2px;
+                transition: transform .3s ease-in-out;
+                content: '\2715';
+                float: right;
+            }
+
+        ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label::before {
+            transform: rotate(-360deg);
+            transition: transform .3s ease-in-out;
+        }
+
+        ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label {
+            border: 2px solid #1bdbf8;
+            background-color: #1b6ec2;
+            color: #fff;
+            transition: all .2s;
+        }
+
+        ul.ks-cboxtagsAllergies li input[type="checkbox"] {
+            display: absolute;
+        }
+
+        ul.ks-cboxtagsAllergies li input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+        }
+
+            ul.ks-cboxtagsAllergies li input[type="checkbox"]:focus + label {
+                border: 2px solid black;
+            }

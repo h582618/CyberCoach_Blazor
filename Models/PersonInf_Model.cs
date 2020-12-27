@@ -43,14 +43,28 @@ namespace ccBlazor.Components
         public bool weaknessAss { get; set; }
         public bool weaknessLegs { get; set; }
 
-        public int days { get; set; }
+        public int trainingDays { get; set; }
+        public int mealAmount { get; set; }
         public List<String> preferedDays { get; }
-    
 
-       
+        public List<String> allergys { get; }
+
+        public List<String> disLikes { get; }
+
         public List<int> goals { get; set; } = new List<int>();
 
+        public void addAllergy(String allergy)
+        {
+      
+                allergys.Add(allergy);
+          
+        }
+        public void addDislikes(String dislike)
+        {
 
+            disLikes.Add(dislike);
+
+        }
 
         public void SetWeight(decimal weight)
         {
@@ -101,6 +115,10 @@ namespace ccBlazor.Components
 
             preferedDays = new List<String>();
 
+            allergys = new List<String>();
+
+            disLikes = new List<String>();
+
         }
         public void SetGender(string gender)
         {
@@ -128,7 +146,7 @@ namespace ccBlazor.Components
         }
         public void setPreferedDays(String value, bool add)
         {
-            if (!preferedDays.Contains(value) && days > preferedDays.Count )
+            if (!preferedDays.Contains(value) && trainingDays > preferedDays.Count )
             {
                 this.preferedDays.Add(value);
             }
@@ -141,13 +159,26 @@ namespace ccBlazor.Components
             } 
         }
 
-        public void setDays(String value)
+        public void setTrainingDays(String value)
         {
-            this.days = int.Parse(value);
+            this.trainingDays = int.Parse(value);
+            Console.WriteLine(value);
+        }
+        public void setMealAmount(String value)
+        {
+            this.mealAmount = int.Parse(value);
             Console.WriteLine(value);
         }
 
+        public void removeAllergy(String value)
+        {
+            allergys.Remove(value);
+        }
 
+        public void removeDislike(String value)
+        {
+            disLikes.Remove(value);
+        }
     }
 
 }

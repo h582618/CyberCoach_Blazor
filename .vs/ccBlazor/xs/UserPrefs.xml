@@ -3,17 +3,17 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Pages/WizardDemo.razor">
     <Files>
       <File FileName="Components/WizardStep.razor" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Pages/Welcome.razor" Line="26" Column="5" />
-      <File FileName="Shared/NavMenu.razor" Line="7" Column="1" />
-      <File FileName="Pages/WizardDemo.razor" Line="66" Column="36" />
-      <File FileName="Models/PersonCalc_Model.cs" Line="21" Column="34" />
-      <File FileName="Components/Wizard.razor" Line="1" Column="30" />
-      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" Line="8205" Column="1" />
-      <File FileName="_Imports.razor" Line="1" Column="1" />
-      <File FileName="wwwroot/css/site.css" Line="207" Column="2" NotebookId="1" />
-      <File FileName="Pages/Index.razor" Line="5" Column="1" NotebookId="1" />
-      <File FileName="Pages/_Host.cshtml" Line="38" Column="1" NotebookId="1" />
-      <File FileName="Models/PersonInf_Model.cs" Line="79" Column="28" NotebookId="1" />
+      <File FileName="Pages/Welcome.razor" />
+      <File FileName="Shared/NavMenu.razor" />
+      <File FileName="Pages/WizardDemo.razor" Line="245" Column="54" />
+      <File FileName="Models/PersonCalc_Model.cs" />
+      <File FileName="Components/Wizard.razor" />
+      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" />
+      <File FileName="_Imports.razor" />
+      <File FileName="wwwroot/css/site.css" Line="574" Column="19" NotebookId="1" />
+      <File FileName="Pages/Index.razor" NotebookId="1" />
+      <File FileName="Pages/_Host.cshtml" NotebookId="1" />
+      <File FileName="Models/PersonInf_Model.cs" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,15 +30,9 @@
               <Node name="ViewModels" expanded="True" />
               <Node name="wwwroot" expanded="True">
                 <Node name="css" expanded="True">
-                  <Node name="bootstrap" expanded="True">
-                    <Node name="bootstrap.min.css" expanded="True" />
-                  </Node>
-                  <Node name="open-iconic" expanded="True">
-                    <Node name="font" expanded="True">
-                      <Node name="fonts" expanded="True" />
-                    </Node>
-                  </Node>
+                  <Node name="bootstrap" expanded="True" />
                 </Node>
+                <Node name="Img" expanded="True" />
               </Node>
             </Node>
           </Node>
