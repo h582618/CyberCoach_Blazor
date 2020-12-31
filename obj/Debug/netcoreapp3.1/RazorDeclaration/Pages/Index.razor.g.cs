@@ -89,6 +89,13 @@ using Radzen.Blazor;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "/Users/matia/ccBlazor/Pages/Index.razor"
+using ccBlazor.Components;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/plan")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -97,6 +104,7 @@ using Radzen.Blazor;
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

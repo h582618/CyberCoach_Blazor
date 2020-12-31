@@ -726,3 +726,30 @@ ul.ks-cboxtagsAllergies {
             ul.ks-cboxtagsAllergies li input[type="checkbox"]:focus + label {
                 border: 2px solid black;
             }
+
+#nutrition {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #nutrition td, #nutrition th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #nutrition tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #nutrition tr:hover {
+        background-color: #ddd;
+    }
+
+    #nutrition th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #1b6ec2;
+        color: white;
+    }

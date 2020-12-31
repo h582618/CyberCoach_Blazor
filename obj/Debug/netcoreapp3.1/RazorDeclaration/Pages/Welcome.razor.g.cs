@@ -91,13 +91,20 @@ using Radzen.Blazor;
 #nullable disable
 #nullable restore
 #line 2 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+using ccBlazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "/Users/matia/ccBlazor/Pages/Welcome.razor"
 using System.ComponentModel.DataAnnotations;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+#line 5 "/Users/matia/ccBlazor/Pages/Welcome.razor"
 using ccBlazor.Components;
 
 #line default
@@ -111,7 +118,7 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+#line 54 "/Users/matia/ccBlazor/Pages/Welcome.razor"
        
     
     private WeclomeScheme welcomeScheme = new WeclomeScheme();
@@ -160,6 +167,7 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

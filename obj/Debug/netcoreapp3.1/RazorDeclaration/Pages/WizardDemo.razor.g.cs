@@ -96,7 +96,7 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/om_deg")]
     public partial class WizardDemo : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -105,7 +105,7 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 332 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+#line 335 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
        
 
 

@@ -1,0 +1,32 @@
+﻿@page "/kostholdsplan"
+@using ccBlazor.Components
+@inject PersonInf_Model ViewModel
+<h3>Måltidsplan for @ViewModel.name </h3>
+<h4> Mål @findGoal(ViewModel.weightLoss,ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h4>
+<GenerateMealPlan weight="@ViewModel.weight" height="@ViewModel.height" age="@ViewModel.age"
+                  gender="@ViewModel.gender" activityLevel="@ViewModel.activityLevel"
+                  weightLoss="@ViewModel.weightLoss"  muscleIncrease="@ViewModel.muscleIncrease"
+                  maintenance="@ViewModel.maintenance"    fatLoss="@ViewModel.fatLoss" 
+                  > </GenerateMealPlan>
+@{
+
+
+    String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+    {
+        if (weightLoss)
+        {
+            return "Vektnedgang";
+        } else if (fatLoss)
+        {
+            return "Fett reduksjon";
+        }
+        else if (muscleIncrease)
+        {
+            return "Muskeløkning";
+        }
+        else
+        {
+            return "Vedlikehold";
+        }
+    }
+}

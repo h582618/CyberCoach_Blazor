@@ -1,0 +1,257 @@
+﻿@using ccBlazor.Data;
+
+
+        <table>
+            <tr>
+                <th> Calories </th>
+                <th> Proteiner </th>
+                <th> Carbs </th>
+                <th> Fat </th>
+            </tr>
+            <tr>
+                <th> @calories </th>
+                <th>  @proteins  </th>
+                <th> @carbs </th>
+                <th> @fats </th>
+            </tr>
+
+
+
+        </table>
+<div className="inp">
+    <div className='nut'>
+        <table id="nutrition">
+            <tr>
+                <th> Uke 1 </th>
+                <th> Type </th>
+                <th> Forslag </th>
+                <th> Kalorier </th>
+                <th> Proteiner </th>
+                <th> Karbohydrater </th>
+                <th> Fett </th>
+            </tr>
+
+            @for (int i = 0; i < 4; i++)
+            {
+                if (i != 0)
+                {
+                    <tr>
+                        <th>  </th>
+                        <th>  </th>
+                        <th> Totalt per dag </th>
+                        <th> @sumCals </th>
+                        <th> @sumProts </th>
+                        <th> @sumCarbs </th>
+                        <th> @sumFats </th>
+                    </tr>
+                    <tr>
+                        <th>  </th>
+                        <th>  </th>
+                        <th> Totalt uke @i </th>
+                        <th> @(sumCals * 7) </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                    </tr>
+                    <tr>
+                        <th> Uke @(i + 1) </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                    </tr>
+                    sumCals = 0;
+                    sumProts = 0;
+                    sumCarbs = 0;
+                    sumFats = 0;
+                }
+
+
+                for (int b = 0; b < 4; b++)
+                {
+                    <tr>
+                        <td> @meals[b].time </td>
+                        <td> @meals[b].type </td>
+                        <td> @meals[b].ingredients </td>
+                        <td> @meals[b].calories </td>
+                        <td> @meals[b].protein </td>
+                        <td> @meals[b].carbs </td>
+                        <td> @meals[b].fat </td>
+                    </tr>
+                    sumCals = sumCals + meals[b].calories;
+                    sumProts = sumProts + meals[b].protein;
+                    sumCarbs = sumCarbs + meals[b].carbs;
+                    sumFats = sumFats + meals[b].fat;
+
+                }
+                if (i == 3)
+                {
+                    <tr>
+                        <th>  </th>
+                        <th>  </th>
+                        <th> Totalt per dag </th>
+                        <th> @sumCals </th>
+                        <th> @sumProts </th>
+                        <th> @sumCarbs </th>
+                        <th> @sumFats </th>
+                    </tr>
+                    <tr>
+                        <th>  </th>
+                        <th>  </th>
+                        <th> Totalt uke @(i+1) </th>
+                        <th> @(sumCals * 7) </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                    </tr>
+                    <tr>
+                        <th> </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                        <th>  </th>
+                    </tr>
+                }
+            }
+
+        </table>
+   
+    </div>
+</div>
+
+
+@code {
+
+    List<Meal> meals = new List<Meal>();
+
+    [Parameter]
+    public double weight { get; set; }
+
+    [Parameter]
+    public double height { get; set; }
+
+    [Parameter]
+    public int age { get; set; }
+
+    [Parameter]
+    public String gender { get; set; }
+
+
+    [Parameter]
+    public int activityLevel { get; set; }
+
+    [Parameter]
+    public bool weightLoss { get; set; }
+
+    [Parameter]
+    public bool muscleIncrease { get; set; }
+
+    [Parameter]
+    public bool maintenance { get; set; }
+
+    [Parameter]
+    public bool fatLoss { get; set; }
+
+    public double calories { get; set;}
+
+    public double carbs  { get; set; }
+
+    public double proteins { get; set; }
+
+    public double fats { get; set; }
+
+    public double sumCals { get; set; }
+
+    public double sumProts { get; set; }
+
+    public double sumCarbs { get; set; }
+
+    public double sumFats { get; set; }
+
+
+
+    protected override void OnInitialized()
+    {
+        meals.Add(new Meal("Frokost", "Torjes spesial",
+            "100g havregryn 100g bær 30g peanøttsmør1 scoop proteinpulver" , 666, 45, 72, 22));
+        meals.Add(new Meal("Lunsj", "Knekkebrød med pålegg",
+            "4 Skiver(220g) fullkorn, med valgfritt pålegg. + proteinshake 1 scoops" , 685, 48, 94, 13));
+        meals.Add(new Meal("Middag", "Kylling og ris",
+            "200g Kylling, 120g ris, valgfri grønnsaker og ønsket saus. ", 631, 50, 101, 3));
+        meals.Add(new Meal("Kvelds", "Brød med egg",
+            "4 egg, 2 rundstykker (120g). Typ hatting eller tilsvarende.  + smør", 568, 42, 55, 20));
+
+        meals.Add(new Meal("Middag", "Tortilla Pizza",
+            "150-200g Karbonadedeig, 2 tortilla, ønsket grønnsaker, tomatsaus, ost, ønsket krydder", 761, 53, 72, 29));
+        meals.Add(new Meal("Middag", "Hamburger",
+            "2 valgfritt hamburgerbrød, 200 gram karbonadedeig,ketchup,salt og pepper,valgfri grønnsaker", 754, 60, 88, 18));
+        meals.Add(new Meal("Middag", "Pasta",
+        "200g Karbonadedeig, 150 gram pasta, 20 gram ost , tomatsaus, løk, valgfri grønnsaker.", 757, 52, 90, 21));
+
+
+
+        double proteinb = 1.8;
+        double carbob = 3.0;
+
+        double proteinc = 2.4;
+        double carboc = 2.0;
+
+        double proteinm = 1.6;
+        double carbom = 2.5;
+
+
+        if (gender.ToUpper().Equals("MANN"))
+        {
+            calories = (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+        }
+        else
+        {
+            calories = (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
+        }
+
+        switch (activityLevel)
+        {
+            case 1:
+                calories = calories + 200;
+                break;
+            case 2:
+                calories = calories + 400;
+                break;
+            case 3:
+                calories = calories + 600;
+                break;
+            default:
+                break;
+        }
+
+
+
+        if (weightLoss || fatLoss)
+        {
+            carbs = weight * carboc;
+            proteins = weight * proteinc;
+            calories = calories - 200;
+        }
+        else if (muscleIncrease)
+        {
+            carbs = weight * carbob;
+            proteins = weight * proteinb;
+            calories = calories + 500;
+        }
+        else
+        {
+            carbs = weight * carbom;
+            proteins = weight * proteinm;
+        }
+
+        double fCals = calories * 0.30;
+        fats = Math.Round(fCals / 9, 2);
+
+        calories = Math.Round(calories, 2);
+
+    }
+}

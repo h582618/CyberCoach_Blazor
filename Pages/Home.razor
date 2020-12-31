@@ -1,0 +1,29 @@
+﻿@page "/"
+@using ccBlazor.Components
+@inject PersonInf_Model ViewModel
+<h5 class="card-title"> @ViewModel.name </h5>
+<h5 class="card-title"> Nåværende vekt @ViewModel.weight </h5>
+<h5 class="card-title"> Mål @findGoal(ViewModel.weightLoss, ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h5>
+
+@{
+    String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+    {
+        if (weightLoss)
+        {
+            return "Vektnedgang";
+        }
+        else if (fatLoss)
+        {
+            return "Fett reduksjon";
+        }
+        else if (muscleIncrease)
+        {
+            return "Muskeløkning";
+        }
+        else
+        {
+            return "Vedlikehold";
+        }
+    }
+}
+

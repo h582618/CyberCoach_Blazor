@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/om_deg"
 @using ccBlazor.Components
 @inject PersonInf_Model ViewModel
 
@@ -27,6 +27,11 @@
             </div>
             <div class="card-body">
 
+                <input placeholder="Høyde" type="number" value="@(ViewModel.height != 0 ? ViewModel.height.ToString() : "" )"
+                       @onchange=@((_e) => ViewModel.SetHeight(Int16.Parse(_e.Value.ToString()))) />
+            </div>
+            <div class="card-body">
+
                 <input placeholder="Vekt" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
                        @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
             </div>
@@ -38,8 +43,7 @@
                         <label>
                             <input type="radio" name="genderRadio" id="optionsRadios2" value="Male"
                                    @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
-                                    checked=@(ViewModel.gender=="Male")
-                                   />
+                                   checked=@(ViewModel.gender=="Male") />
 
 
                             <i class="zmdi zmdi-male-alt zmdi-hc-5x"></i>
@@ -49,8 +53,7 @@
                         <label>
                             <input type="radio" name="genderRadio" id="optionsRadios1" value="Female"
                                    @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
-                                  checked=@(ViewModel.gender=="Female")
-                                   >
+                                   checked=@(ViewModel.gender=="Female")>
                             <i class="zmdi zmdi-female zmdi-hc-5x"></i>
                         </label>
 
@@ -300,7 +303,7 @@
                     @foreach (var dislikeVar in ViewModel.disLikes)
                     {
                         <li>
-                            <input type="checkbox" id="@dislikeVar" value="@dislikeVar" @onclick="() => ViewModel.removeDislike(allergy)" />
+                            <input type="checkbox" id="@dislikeVar" value="@dislikeVar" @onclick="() => ViewModel.removeDislike(dislikeVar)" />
                             <label for="@dislikeVar"> @dislikeVar</label>
 
                         </li>

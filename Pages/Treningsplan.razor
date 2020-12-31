@@ -1,0 +1,16 @@
+﻿@page "/treningsplan"
+@using ccBlazor.Components
+@inject PersonInf_Model ViewModel
+<h5 class="card-title"> Treningsplan for @ViewModel.name </h5>
+<h5 class="card-title"> @ViewModel.trainingDays trenings dager i uken. </h5>
+@foreach (var t in ViewModel.goals)
+{
+    <p> @t </p>
+}
+<GenerateExercise days="@ViewModel.trainingDays"> </GenerateExercise>
+
+
+@{
+
+}
+

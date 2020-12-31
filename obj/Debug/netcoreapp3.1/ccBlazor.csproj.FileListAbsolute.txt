@@ -81,3 +81,11 @@
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Checkboxlist.razor.g.cs
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/ccBlazor.RazorComponent.output.cache
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/scopedcss/bundle/ccBlazor.styles.css
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Treningsplan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Treningsplan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Kostholdsplan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Kostholdsplan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Components/GenerateMealPlan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Components/GenerateMealPlan.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Home.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Home.razor.g.cs

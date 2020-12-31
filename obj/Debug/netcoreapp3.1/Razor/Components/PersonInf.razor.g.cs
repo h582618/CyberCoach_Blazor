@@ -87,6 +87,13 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "/Users/matia/ccBlazor/Components/PersonInf.razor"
 using System.ComponentModel.DataAnnotations;
 

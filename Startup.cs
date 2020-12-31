@@ -31,8 +31,8 @@ namespace ccBlazor
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
-            services.AddTransient<PersonInf_Model>();
+            //services.AddScoped<PersonInf_Model>();
+           services.AddSingleton<PersonInf_Model>();
 
 
             /*

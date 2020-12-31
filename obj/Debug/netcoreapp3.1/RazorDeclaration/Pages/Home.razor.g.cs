@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace ccBlazor.Components
+namespace ccBlazor.Pages
 {
     #line hidden
     using System;
@@ -90,20 +90,21 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "/Users/matia/ccBlazor/_Imports.razor"
+#line 2 "/Users/matia/ccBlazor/Pages/Home.razor"
 using ccBlazor.Components;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/generateexercise")]
-    public partial class GenerateExercise : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    public partial class Home : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -25,8 +25,8 @@ namespace ccBlazor.Components
         public List<string> GenderChoices { get; }
         public Dictionary<int, string> GoalChoices { get; }
         public String gender { get; set; }
-        public decimal weight { get; set; }
-        public decimal height { get; set; }
+        public double weight { get; set; }
+        public double height { get; set; }
 
         public int activityLevel {get; set; }
 
@@ -66,13 +66,17 @@ namespace ccBlazor.Components
 
         }
 
-        public void SetWeight(decimal weight)
+        public void SetWeight(double weight)
         {
             Console.WriteLine(weight);
             this.weight = weight;
-            foreach(int x in goals){
-                Console.WriteLine(x);
-            }
+          
+        }
+        public void SetHeight(double height)
+        {
+            Console.WriteLine(height);
+            this.height = height;
+            
         }
 
         public void SetMail(String mail)
