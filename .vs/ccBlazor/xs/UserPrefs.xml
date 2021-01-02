@@ -1,45 +1,21 @@
 ﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default">
   <MonoDevelop.Ide.ItemProperties.ccBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Home.cshtml">
-    <Files>
-      <File FileName="Components/WizardStep.razor" Line="1" Column="32" IsPinned="True" />
-      <File FileName="Pages/Welcome.razor" Line="2" Column="1" />
-      <File FileName="Shared/NavMenu.razor" Line="36" Column="7" />
-      <File FileName="Components/Wizard.razor" Line="24" Column="18" />
-      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" />
-      <File FileName="_Imports.razor" Line="12" Column="27" />
-      <File FileName="Components/GenerateExercise.razor" Line="7" Column="38" />
-      <File FileName="App.razor" />
-      <File FileName="Startup.cs" Line="34" Column="53" />
-      <File FileName="Data/Exercises.cs" Line="1" Column="1" />
-      <File FileName="Data/Exercise.cs" />
-      <File FileName="Data/Workouts.cs" />
-      <File FileName="Data/Splits/PPL.cs" />
-      <File FileName="Data/Splits/FB.cs" />
-      <File FileName="Data/Splits/BS.cs" />
-      <File FileName="Data/Splits/UL.cs" />
-      <File FileName="Pages/Treningsplan.razor" Line="2" Column="1" />
-      <File FileName="Pages/Kostholdsplan.cshtml" Line="33" Column="1" />
-      <File FileName="Data/Meal.cs" Line="25" Column="10" />
-      <File FileName="Pages/Index.razor" Line="1" Column="1" />
-      <File FileName="Pages/Home.cshtml" Line="6" Column="1" />
-      <File FileName="Pages/WizardDemo.razor" Line="1" Column="10" NotebookId="1" />
-      <File FileName="Data/Nutrition.cs" Line="8" Column="13" NotebookId="1" />
-      <File FileName="Models/PersonCalc_Model.cs" Line="30" Column="41" NotebookId="1" />
-      <File FileName="Models/PersonInf_Model.cs" Line="118" Column="28" NotebookId="1" />
-      <File FileName="Components/GenerateMealPlan.razor" Line="104" Column="39" NotebookId="1" />
-      <File FileName="wwwroot/css/site.css" Line="749" Column="20" NotebookId="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ccBlazor" expanded="True">
             <Node name="ccBlazor" expanded="True">
-              <Node name="Components" expanded="True" />
-              <Node name="Data" expanded="True" />
+              <Node name="Components" expanded="True">
+                <Node name="GenerateExercise.razor" expanded="True" />
+                <Node name="Wizard.razor" expanded="True" />
+              </Node>
+              <Node name="Data" expanded="True">
+                <Node name="Splits" expanded="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="Home.cshtml" selected="True" />
+                <Node name="WizardDemo.razor" selected="True" />
               </Node>
               <Node name="Shared" expanded="True" />
               <Node name="ViewModels" expanded="True" />

@@ -1,0 +1,105 @@
+﻿@page "/treningsplan"
+@using ccBlazor.Components
+@inject PersonInf_Model ViewModel
+<fieldset class="border p-8">
+    <div class="containerBody">
+        <h3>Treningsplan for @ViewModel.name </h3>
+        <h4> Mål @findGoal(ViewModel.weightLoss, ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h4>
+        <p> Periode: 4 uker</p>
+    </div>
+</fieldset>
+<div class="card-body">
+    <div class="containerBody">
+        @if (ViewModel.trainingDays < 4)
+        {
+
+            <ul class="ks-cboxtags4">
+                @{
+                    for (int b = 1; b < 5; b++)
+                    {
+                        <li>
+                            <input type="radio" id="@b" value="@b"
+                                   @onchange=@((_e) => week = Int16.Parse(_e.Value.ToString()))
+                                   checked=@(week == b) />
+                            <label for="@b">@b</label>
+                        </li>
+                    }
+                }
+            </ul>
+            <br />
+   
+}   
+                <ul class="ks-cboxtags4">
+                    @{ int i = 1;
+                        foreach (String t in ViewModel.preferedDays)
+                        {
+
+                            <li>
+                                <input type="radio" id="@t" value="@i"
+                                       @onchange=@((_e) => setCurrentDay(t,Int16.Parse(_e.Value.ToString())))
+                                       checked=@(currentDay == t) />
+                                <label for="@t"> @dayToNorwegian(t)</label>
+                            </li>
+                            i++;
+                        }
+                    }
+                </ul>
+                <br />
+            </div>
+        </div>
+        <GenerateExercise days="@ViewModel.trainingDays" currentDay="currentDayInt" week="week"> </GenerateExercise>
+        @code {
+            public int currentDayInt { get; set; } = 1;
+
+            public String currentDay { get; set; } = "monday";
+
+            public int week { get; set; } = 1;
+
+            public void setCurrentDay(String t, int i)
+            {
+                this.currentDay = t;
+                this.currentDayInt = i;
+            }
+
+            String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+            {
+                if (weightLoss)
+                {
+                    return "Vektnedgang";
+                }
+                else if (fatLoss)
+                {
+                    return "Fett reduksjon";
+                }
+                else if (muscleIncrease)
+                {
+                    return "Muskeløkning";
+                }
+                else
+                {
+                    return "Vedlikehold";
+                }
+            }
+            public String dayToNorwegian(String day)
+            {
+                switch (day)
+                {
+                    case "monday":
+                        return "Mandag";
+                    case "tuesday":
+                        return "Tirsdag";
+                    case "wednesday":
+                        return "Onsdag";
+                    case "thursday":
+                        return "Torsdag";
+                    case "friday":
+                        return "Friday";
+                    case "saturday":
+                        return "Lørdag";
+                    case "sunday":
+                        return "Sunday";
+                    default:
+                        return " ";
+                }
+            }
+        }

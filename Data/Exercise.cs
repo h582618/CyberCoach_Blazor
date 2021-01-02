@@ -8,7 +8,8 @@ namespace ccBlazor.Data
         public String name { get; set; }
         [JsonProperty(PropertyName = "Muscle Targeted")]
         public string muscle_Targeted { get; set; }
-        [JsonProperty(PropertyName = "Equipment Type")]
+        [JsonProperty(PropertyName
+            = "Equipment Type")]
         public string equipment_Type { get; set; }
         public string src { get; set; }
         public String newDay { get; set; }

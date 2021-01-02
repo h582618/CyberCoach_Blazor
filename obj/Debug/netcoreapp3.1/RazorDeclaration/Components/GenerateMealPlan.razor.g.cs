@@ -236,10 +236,16 @@ using ccBlazor.Data;
             proteins = weight * proteinm;
         }
 
+
         double fCals = calories * 0.30;
-        fats = Math.Round(fCals / 9, 2);
 
         calories = Math.Round(calories, 2);
+        proteins = Math.Round(proteins, 2);
+        carbs = Math.Round(carbs, 2);
+
+        fats = Math.Round(fCals / 9, 2);
+
+
 
     }
 

@@ -97,14 +97,14 @@ using ccBlazor.Components;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+#line 5 "/Users/matia/ccBlazor/Pages/Welcome.razor"
 using System.ComponentModel.DataAnnotations;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+#line 6 "/Users/matia/ccBlazor/Pages/Welcome.razor"
 using ccBlazor.Components;
 
 #line default
@@ -118,12 +118,14 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 54 "/Users/matia/ccBlazor/Pages/Welcome.razor"
+#line 56 "/Users/matia/ccBlazor/Pages/Welcome.razor"
        
-    
+
     private WeclomeScheme welcomeScheme = new WeclomeScheme();
     private Boolean display { get; set; } = false;
     private int daysWeek { get; set; }
+    
+
     private void HandleValidSubmit()
     {
         display = true;
@@ -167,6 +169,7 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }

@@ -90,20 +90,81 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "/Users/matia/ccBlazor/Pages/Treningsplan.razor"
+#line 2 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
 using ccBlazor.Components;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/treningsplan")]
-    public partial class Treningsplan : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Trainingplan : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 51 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
+               
+            public int currentDayInt { get; set; } = 1;
+
+            public String currentDay { get; set; } = "monday";
+
+            public int week { get; set; } = 1;
+
+            public void setCurrentDay(String t, int i)
+            {
+                this.currentDay = t;
+                this.currentDayInt = i;
+            }
+
+            String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+            {
+                if (weightLoss)
+                {
+                    return "Vektnedgang";
+                }
+                else if (fatLoss)
+                {
+                    return "Fett reduksjon";
+                }
+                else if (muscleIncrease)
+                {
+                    return "Muskeløkning";
+                }
+                else
+                {
+                    return "Vedlikehold";
+                }
+            }
+            public String dayToNorwegian(String day)
+            {
+                switch (day)
+                {
+                    case "monday":
+                        return "Mandag";
+                    case "tuesday":
+                        return "Tirsdag";
+                    case "wednesday":
+                        return "Onsdag";
+                    case "thursday":
+                        return "Torsdag";
+                    case "friday":
+                        return "Friday";
+                    case "saturday":
+                        return "Lørdag";
+                    case "sunday":
+                        return "Sunday";
+                    default:
+                        return " ";
+                }
+            }
+        
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }

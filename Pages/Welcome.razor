@@ -1,8 +1,10 @@
 ﻿<h4> Velkommen til CyberCoach</h4>
 @using ccBlazor.Components
 @inject PersonInf_Model ViewModel
+@inject NavigationManager Navigation
 @using System.ComponentModel.DataAnnotations;
 @using ccBlazor.Components;
+
 
 <EditForm Model="@welcomeScheme" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -11,8 +13,8 @@
         <label for="age" class="col-sm-2 col-form-label">
             Alder
         </label>
-        <InputNumber style="width:5%" id="age" @bind-Value="welcomeScheme.age"/>
-   
+        <InputNumber style="width:5%" id="age" @bind-Value="welcomeScheme.age" />
+
     </div>
     <div class="form-group row">
         <label for="gender" class="col-sm-2 col-form-label">
@@ -25,19 +27,19 @@
             }
         </InputSelect>
     </div>
-    
+
     <div class="form-group row">
         <label for="weight" class="col-sm-2 col-form-label">
             Vekt
         </label>
-        <InputNumber style="width:5%"id="weight" @bind-Value="welcomeScheme.weight" />
+        <InputNumber style="width:5%" id="weight" @bind-Value="welcomeScheme.weight" />
     </div>
     <div class="form-group row">
         <label for="daysWeek" class="col-sm-2 col-form-label">
             Antall økter i uken
         </label>
         <InputSelect id="daysWeek" @bind-Value="welcomeScheme.daysWeek">
-            @for(int i = 1; i < 8; i++)
+            @for (int i = 1; i < 8; i++)
             {
                 <option value="@i">@i</option>
             }
@@ -45,17 +47,19 @@
     </div>
     <button class="btn btn-primary" type="submit">Lag plan</button>
 </EditForm>
-@if(display == true)
+@if (display == true)
 {
     <ccBlazor.Components.GenerateExercise days="daysWeek"> </ccBlazor.Components.GenerateExercise>
-   
+
 }
 
 @code {
-    
+
     private WeclomeScheme welcomeScheme = new WeclomeScheme();
     private Boolean display { get; set; } = false;
     private int daysWeek { get; set; }
+    
+
     private void HandleValidSubmit()
     {
         display = true;

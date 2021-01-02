@@ -103,6 +103,20 @@ using ccBlazor.Components;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 33 "/Users/matia/ccBlazor/Components/Wizard.razor"
+       
+    void FormSubmitted()
+    {
+        ViewModel.submitted = true;
+        Navigation.NavigateTo("/", forceLoad: true);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }
 #pragma warning restore 1591

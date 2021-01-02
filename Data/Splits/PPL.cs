@@ -22,6 +22,7 @@ namespace ccBlazor.Data.Splits
             legs(exercises, "B");
 
         }
+       
         public List<Exercise> push(List<Exercise> exercises,String x)
         {
             Random rnd = new Random();
@@ -34,6 +35,8 @@ namespace ccBlazor.Data.Splits
             .Distinct().Select(v => new { v, i = rnd.Next() })
             .OrderBy(x => x.i).Take(3).Distinct()
             .Select(x => x.v);
+
+
 
             var shoulders = exercises
           .FindAll(x => x.muscle_Targeted.Equals("Shoulders")

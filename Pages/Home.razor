@@ -1,11 +1,21 @@
 ﻿@page "/"
 @using ccBlazor.Components
 @inject PersonInf_Model ViewModel
+@inject NavigationManager Navigation
+
 <h5 class="card-title"> @ViewModel.name </h5>
 <h5 class="card-title"> Nåværende vekt @ViewModel.weight </h5>
 <h5 class="card-title"> Mål @findGoal(ViewModel.weightLoss, ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h5>
 
-@{
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        if (!ViewModel.submitted)
+        {
+            Navigation.NavigateTo("/om_deg");
+        }
+
+    }
     String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
     {
         if (weightLoss)
@@ -25,5 +35,5 @@
             return "Vedlikehold";
         }
     }
-}
+    }
 

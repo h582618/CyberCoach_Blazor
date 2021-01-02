@@ -104,6 +104,42 @@ using ccBlazor.Components;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 10 "/Users/matia/ccBlazor/Pages/Home.razor"
+       
+    protected override async Task OnInitializedAsync()
+    {
+        if (!ViewModel.submitted)
+        {
+            Navigation.NavigateTo("/om_deg");
+        }
+
+    }
+    String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+    {
+        if (weightLoss)
+        {
+            return "Vektnedgang";
+        }
+        else if (fatLoss)
+        {
+            return "Fett reduksjon";
+        }
+        else if (muscleIncrease)
+        {
+            return "Muskeløkning";
+        }
+        else
+        {
+            return "Vedlikehold";
+        }
+    }
+    
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }
 }

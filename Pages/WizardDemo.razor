@@ -28,12 +28,12 @@
             <div class="card-body">
 
                 <input placeholder="Høyde" type="number" value="@(ViewModel.height != 0 ? ViewModel.height.ToString() : "" )"
-                       @onchange=@((_e) => ViewModel.SetHeight(Int16.Parse(_e.Value.ToString()))) />
+                       @onchange=@((_e) => ViewModel.SetHeight(Int16.Parse(_e.Value.ToString().Trim()))) />
             </div>
             <div class="card-body">
 
                 <input placeholder="Vekt" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
-                       @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString()))) />
+                       @onchange=@((_e) => ViewModel.SetWeight(Int16.Parse(_e.Value.ToString().Trim()))) />
             </div>
 
             <div class="card-body">
@@ -261,8 +261,8 @@
                 {
                     <div class="card-body">
                         <h6 class="card-title"> Legg inn allergier </h6>
-                        <input class="allergyInput" placeholder="allergi" type="text" @bind="allergy" />
-                        <button class="btn btn-primary" @onclick="addAllergy"> legg til </button>
+                        <input class="allergyInput"  placeholder="allergi" type="text" @bind="allergy" />
+                        <button type="button" class="btn btn-primary" @onclick="addAllergy"> legg til </button>
                         <ul class="ks-cboxtagsAllergies">
                             @foreach (var allergy in ViewModel.allergys)
                             {
@@ -298,7 +298,7 @@
             <div class="card-body">
                 <h6 class="card-title"> Legg inn mat </h6>
                 <input class="allergyInput" placeholder="" type="text" @bind="dislike" />
-                <button class="btn btn-primary" @onclick="addDislikes"> legg til </button>
+                <button type="button" class="btn btn-primary" @onclick="addDislikes"> legg til </button>
                 <ul class="ks-cboxtagsAllergies">
                     @foreach (var dislikeVar in ViewModel.disLikes)
                     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Components;
 
 namespace ccBlazor.Components
@@ -30,6 +31,8 @@ namespace ccBlazor.Components
 
         public int activityLevel {get; set; }
 
+        public bool submitted { get; set; }
+
         public bool weightLoss { get; set; } 
         public bool muscleIncrease { get; set; } 
         public bool maintenance { get; set; }
@@ -45,13 +48,32 @@ namespace ccBlazor.Components
 
         public int trainingDays { get; set; }
         public int mealAmount { get; set; }
-        public List<String> preferedDays { get; }
+        public List<String> preferedDays { get; set; }
 
         public List<String> allergys { get; }
 
         public List<String> disLikes { get; }
 
         public List<int> goals { get; set; } = new List<int>();
+
+
+        //Eller (daysofweek value + 6) % 7
+        public enum DayOfWeek
+        {    
+            Monday = 0,
+  
+            Tuesday = 1,
+          
+            Wednesday = 2,
+           
+            Thursday = 3,
+          
+            Friday = 4,
+       
+            Saturday = 5,
+
+            Sunday = 6,
+        }
 
         public void addAllergy(String allergy)
         {
@@ -160,7 +182,9 @@ namespace ccBlazor.Components
             } else
             {
 
-            } 
+            }
+            this.preferedDays = preferedDays.OrderBy(s => Enum.Parse(typeof(DayOfWeek), (char.ToUpper(s[0]) + s.Substring(1)))).ToList();
+
         }
 
         public void setTrainingDays(String value)

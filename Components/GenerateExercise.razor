@@ -2,16 +2,24 @@
 
     <CascadingValue Value="this">
         @{ List<Data.Exercise> exercisesGen = Generateexercises(days);
-
-
+            //int dayCount = 0;
             if (exercisesGen != null)
             {
+                bool first = true;
                 int v = 1;
-                foreach (Data.Exercise t in exercisesGen)
+                Console.WriteLine(v);
+                Console.WriteLine(currentDay);
+                for (int i = 0; i < exercisesGen.Count; i++)
                 {
-                    if (t.newDay != null)
-                    {
 
+
+                    if (exercisesGen[i].newDay != null)
+                    {
+                        if (!first)
+                        {
+                            v++;
+                        }
+                        if(v == currentDay) { 
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                         <p style="width:100%">               </p>
                         <div style="
@@ -21,30 +29,34 @@
                         " class="container">
                             <div class="row">
                                 <div class="col">
-                                    <h3> Dag @v :  @t.newDay </h3>
+                                    <h3> Dag @v :  @exercisesGen[i].newDay </h3>
                                 </div>
                             </div>
                         </div>
-                        v++;
+
+                        }
+                        first = false;
                     }
                     else
                     {
+                        if (v == currentDay)
+                        {
                         <p> </p>
                         <div class="exercisesTxt">
                             <span class="exercises">
 
-                                <p style="font-weight: bold;">  @t.name</p>
-                                <p> Muscle targeted : @t.muscle_Targeted</p>
-                                <p> Equipment type : @t.equipment_Type</p>
+                                <p style="font-weight: bold;">  @exercisesGen[i].name</p>
+                                <p> Muscle targeted : @exercisesGen[i].muscle_Targeted</p>
+                                <p> Equipment type : @exercisesGen[i].equipment_Type</p>
                                 <p> 4 X 8</p>
-                                <img src="@t.src" width="200" height="200">
+                                <img src="@exercisesGen[i].src" width="200" height="200">
 
                             </span>
                         </div>
                         <p>   </p>
-
+                            }
+                        }
                     }
                 }
             }
-        }
     </CascadingValue>

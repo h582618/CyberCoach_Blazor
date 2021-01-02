@@ -47,7 +47,7 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #047bfe 70%);
 }
 
     .sidebar .top-row {
@@ -202,141 +202,156 @@ app {
     text-align: center;
     display: inline-block;
 }
-input {
-    width: 30%;
-}
-.card-body1 {
-    float: left;
-    display: contents;
+@media screen and (min-width: 480px) {
+    input {
+        width: 30%;
+    }
 }
 
-.Musclegroups {
-    width: 70%;
-    margin: auto;
-}
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 12px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-    /* Hide the browser's default checkbox */
-    .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
+    .card-body1 {
+        float: left;
+        display: contents;
     }
 
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
-}
+    .Musclegroups {
+        width: 70%;
+        margin: auto;
+    }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 12px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-    background-color: #2196F3;
-}
+        /* Hide the browser's default checkbox */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+    }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  
-}
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
 
-#path3 .color {
-    fill: #0000ff;
-    /*stroke: #231F20;*/
-}
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
 
-#path3 {
-    fill: #0000ff;
-    /*stroke: #fff;*/
-}
-.boxBodyLink {
-    margin: 0 auto;
-    margin-bottom: 14px;
-    display: block;
-    width: 130px;
-    font-family: 'Oswald', Helvetica, Arial, sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    font-size: 0.875rem;
-    color: white;
-    background: #1b6ec2;
-    padding: 10px;
-    text-transform: uppercase;
-}
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #path3 .color {
+        fill: #0000ff;
+        /*stroke: #231F20;*/
+    }
+
+    #path3 {
+        fill: #0000ff;
+        /*stroke: #fff;*/
+    }
+
+    .boxBodyLink {
+        margin: 0 auto;
+        margin-bottom: 14px;
+        display: block;
+        width: 130px;
+        font-family: 'Oswald', Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: white;
+        background: #1b6ec2;
+        padding: 10px;
+        text-transform: uppercase;
+    }
+
 .boxBody {
-    width: 510px;
     height: 345px;
     margin: auto;
     padding: 0px;
     text-align: center;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
-
-.allergyInput {
-    width:20%;
-    font-size:inherit;
-    h
+@media screen and (min-width: 480px) {
+    .boxBody {
+        width: 510px;
+        height: 345px;
+        margin: auto;
+        padding: 0px;
+        text-align: center;
+        background-repeat: no-repeat;
+        
+    }
 }
-
-.containerBody {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 13px;
-}
-
-ul.ks-cboxtags {
-    list-style: none;
-    padding: 20px;
-
-}
-
-
-
-    ul.ks-cboxtags li {
-        display: inline;
+    .allergyInput {
+        width: 20%;
+        font-size: inherit;
+        
     }
 
+    .containerBody {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 13px;
+    }
+
+    ul.ks-cboxtags {
+        list-style: none;
+        padding: 20px;
+    }
+
+
+
+        ul.ks-cboxtags li {
+            display: inline;
+        }
+
+    @media screen and (min-width: 480px) {
         ul.ks-cboxtags li label {
             display: block;
             background-color: rgba(255, 255, 255, .9);
@@ -355,401 +370,434 @@ ul.ks-cboxtags {
             width: 31%;
             margin: auto;
         }
-
-        ul.ks-cboxtags li label {
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-            ul.ks-cboxtags li label::before {
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 12px;
-                padding: 2px 6px 2px 2px;
-             
-                transition: transform .3s ease-in-out;
-            }
-
-        ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
-
-            transform: rotate(-360deg);
-            transition: transform .3s ease-in-out;
-        }
-
-        ul.ks-cboxtags li input[type="checkbox"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtags li input[type="checkbox"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtags li input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtags li input[type="checkbox"]:focus + label {
-                border: 2px solid black;
-            }
-
-        ul.ks-cboxtags li input[type="radio"]:checked + label::before {
-            transform: rotate(-360deg);
-            transition: transform .3s ease-in-out;
-        }
-
-        ul.ks-cboxtags li input[type="radio"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtags li input[type="radio"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtags li input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtags li input[type="radio"]:focus + label {
-                border: 2px solid black;
-            }
-
-ul.ks-cboxtags2 {
-    list-style: none;
-    padding: 20px;
-}
-
-
-
-    ul.ks-cboxtags2 li {
-        display: inline;
     }
 
-        ul.ks-cboxtags2 li label {
-            display: block;
-            background-color: rgba(255, 255, 255, .9);
-            border: 2px solid rgba(139, 139, 139, .3);
-            color: #adadad;
-            border-radius: 25px;
-            white-space: nowrap;
-            margin: 3px 0px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: all .2s;
-            width: 150px;
-            margin: auto;
-        }
 
-        ul.ks-cboxtags2 li label {
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-            ul.ks-cboxtags2 li label::before {
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 12px;
-                padding: 2px 6px 2px 2px;
-                transition: transform .3s ease-in-out;
-            }
-
-        ul.ks-cboxtags2 li input[type="checkbox"]:checked + label::before {
-            transform: rotate(-360deg);
-            transition: transform .3s ease-in-out;
-        }
-
-        ul.ks-cboxtags2 li input[type="checkbox"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtags2 li input[type="checkbox"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtags2 li input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtags2 li input[type="checkbox"]:focus + label {
-                border: 2px solid black;
-            }
-
-ul.ks-cboxtags3 {
-    list-style: none;
-    padding: 20px;
-
-}
-
-
-
-    ul.ks-cboxtags3 li {
-        display: inline;
+    ul.ks-cboxtags li label {
+        display: block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(139, 139, 139, .3);
+        color: #adadad;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+        margin: auto;
     }
 
-        ul.ks-cboxtags3 li label {
+    ul.ks-cboxtags li label {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+        ul.ks-cboxtags li label::before {
             display: inline-block;
-            background-color: rgba(255, 255, 255, .9);
-            border: 2px solid rgba(139, 139, 139, .3);
-            color: #adadad;
-            border-radius: 25px;
-            white-space: nowrap;
-            margin: 3px 0px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: all .2s;
-            width: 100px;
-            margin: auto;
-          
-        }
-
-        ul.ks-cboxtags3 li label {
-            padding: 8px 12px;
-            cursor: pointer;
-           
-        }
-
-            ul.ks-cboxtags3 li label::before {
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 12px;
-                padding: 2px 6px 2px 2px;
-                transition: transform .3s ease-in-out;
-                float: right;
-            }
-
-        ul.ks-cboxtags3 li input[type="checkbox"]:checked + label::before {
-            transform: rotate(-360deg);
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 12px;
+            padding: 2px 6px 2px 2px;
             transition: transform .3s ease-in-out;
         }
 
-        ul.ks-cboxtags3 li input[type="checkbox"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtags3 li input[type="checkbox"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtags3 li input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtags3 li input[type="checkbox"]:focus + label {
-                border: 2px solid black;
-            }
-
-
-ul.ks-cboxtags4 {
-    list-style: none;
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-    ul.ks-cboxtags4 li {
-        display: inline;
+    ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+        transform: rotate(-360deg);
+        transition: transform .3s ease-in-out;
     }
 
-        ul.ks-cboxtags4 li label {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, .9);
-            border: 2px solid rgba(139, 139, 139, .3);
-            color: #adadad;
-            border-radius: 25px;
-            white-space: nowrap;
-            margin: 3px 0px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: all .2s;
-            width: 100px;
-            margin: auto;
-        }
-
-        ul.ks-cboxtags4 li label {
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-            ul.ks-cboxtags4 li label::before {
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 12px;
-                padding: 2px 6px 2px 2px;
-                transition: transform .3s ease-in-out;
-            }
-
-        ul.ks-cboxtags4 li input[type="radio"]:checked + label::before {
-            transform: rotate(-360deg);
-            transition: transform .3s ease-in-out;
-        }
-
-        ul.ks-cboxtags4 li input[type="radio"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtags4 li input[type="radio"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtags4 li input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtags4 li input[type="radio"]:focus + label {
-                border: 2px solid black;
-            }
-
-
-ul.ks-cboxtagsAllergies {
-    list-style: none;
-    padding: 20px;
-}
-
-
-
-    ul.ks-cboxtagsAllergies li {
-        display: inline;
-    }
-
-        ul.ks-cboxtagsAllergies li label {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, .9);
-            border: 2px solid rgba(139, 139, 139, .3);
-            color: #adadad;
-            border-radius: 25px;
-            white-space: nowrap;
-            margin: 3px 0px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: all .2s;
-            width: 100px;
-            margin: auto;
-        }
-
-        ul.ks-cboxtagsAllergies li label {
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-            ul.ks-cboxtagsAllergies li label::before {
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 12px;
-                padding: 2px 6px 2px 2px;
-                transition: transform .3s ease-in-out;
-                content: '\2715';
-                float: right;
-            }
-
-        ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label::before {
-            transform: rotate(-360deg);
-            transition: transform .3s ease-in-out;
-        }
-
-        ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label {
-            border: 2px solid #1bdbf8;
-            background-color: #1b6ec2;
-            color: #fff;
-            transition: all .2s;
-        }
-
-        ul.ks-cboxtagsAllergies li input[type="checkbox"] {
-            display: absolute;
-        }
-
-        ul.ks-cboxtagsAllergies li input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-            ul.ks-cboxtagsAllergies li input[type="checkbox"]:focus + label {
-                border: 2px solid black;
-            }
-
-#nutrition {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-    #nutrition td, #nutrition th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    #nutrition tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    #nutrition tr:hover {
-        background-color: #ddd;
-    }
-
-    #nutrition th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
+    ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+        border: 2px solid #1bdbf8;
         background-color: #1b6ec2;
-        color: white;
+        color: #fff;
+        transition: all .2s;
     }
+
+    ul.ks-cboxtags li input[type="checkbox"] {
+        display: absolute;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+        ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+            border: 2px solid black;
+        }
+
+    ul.ks-cboxtags li input[type="radio"]:checked + label::before {
+        transform: rotate(-360deg);
+        transition: transform .3s ease-in-out;
+    }
+
+    ul.ks-cboxtags li input[type="radio"]:checked + label {
+        border: 2px solid #1bdbf8;
+        background-color: #1b6ec2;
+        color: #fff;
+        transition: all .2s;
+    }
+
+    ul.ks-cboxtags li input[type="radio"] {
+        display: absolute;
+    }
+
+    ul.ks-cboxtags li input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+        ul.ks-cboxtags li input[type="radio"]:focus + label {
+            border: 2px solid black;
+        }
+
+    ul.ks-cboxtags2 {
+        list-style: none;
+        padding: 20px;
+    }
+
+
+
+        ul.ks-cboxtags2 li {
+            display: inline;
+        }
+@media screen and (min-width: 480px) {
+    ul.ks-cboxtags2 li label {
+        display: block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(139, 139, 139, .3);
+        color: #adadad;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+        width: 100%;
+        margin: auto;
+    }
+}
+ul.ks-cboxtags2 li label {
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+    width: 30%;
+    margin: auto;
+}
+    ul.ks-cboxtags2 li label {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+        ul.ks-cboxtags2 li label::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            font-size: 12px;
+            padding: 2px 6px 2px 2px;
+            transition: transform .3s ease-in-out;
+        }
+
+    ul.ks-cboxtags2 li input[type="checkbox"]:checked + label::before {
+        transform: rotate(-360deg);
+        transition: transform .3s ease-in-out;
+    }
+
+    ul.ks-cboxtags2 li input[type="checkbox"]:checked + label {
+        border: 2px solid #1bdbf8;
+        background-color: #1b6ec2;
+        color: #fff;
+        transition: all .2s;
+    }
+
+    ul.ks-cboxtags2 li input[type="checkbox"] {
+        display: absolute;
+    }
+
+    ul.ks-cboxtags2 li input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+        ul.ks-cboxtags2 li input[type="checkbox"]:focus + label {
+            border: 2px solid black;
+        }
+
+    ul.ks-cboxtags3 {
+        list-style: none;
+        padding: 20px;
+    }
+
+
+
+        ul.ks-cboxtags3 li {
+            display: inline;
+        }
+
+            ul.ks-cboxtags3 li label {
+                display: inline-block;
+                background-color: rgba(255, 255, 255, .9);
+                border: 2px solid rgba(139, 139, 139, .3);
+                color: #adadad;
+                border-radius: 25px;
+                white-space: nowrap;
+                margin: 3px 0px;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                transition: all .2s;
+                width: 100px;
+                margin: auto;
+            }
+
+            ul.ks-cboxtags3 li label {
+                padding: 8px 12px;
+                cursor: pointer;
+            }
+
+                ul.ks-cboxtags3 li label::before {
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 12px;
+                    padding: 2px 6px 2px 2px;
+                    transition: transform .3s ease-in-out;
+                    float: right;
+                }
+
+            ul.ks-cboxtags3 li input[type="checkbox"]:checked + label::before {
+                transform: rotate(-360deg);
+                transition: transform .3s ease-in-out;
+            }
+
+            ul.ks-cboxtags3 li input[type="checkbox"]:checked + label {
+                border: 2px solid #1bdbf8;
+                background-color: #1b6ec2;
+                color: #fff;
+                transition: all .2s;
+            }
+
+            ul.ks-cboxtags3 li input[type="checkbox"] {
+                display: absolute;
+            }
+
+            ul.ks-cboxtags3 li input[type="checkbox"] {
+                position: absolute;
+                opacity: 0;
+            }
+
+                ul.ks-cboxtags3 li input[type="checkbox"]:focus + label {
+                    border: 2px solid black;
+                }
+
+
+    ul.ks-cboxtags4 {
+        list-style: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+
+
+        ul.ks-cboxtags4 li {
+            display: inline;
+        }
+
+            ul.ks-cboxtags4 li label {
+                display: inline-block;
+                background-color: rgba(255, 255, 255, .9);
+                border: 2px solid rgba(139, 139, 139, .3);
+                color: #adadad;
+                border-radius: 25px;
+                white-space: nowrap;
+                margin: 3px 0px;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                transition: all .2s;
+                width: 100px;
+                margin: auto;
+            }
+
+            ul.ks-cboxtags4 li label {
+                padding: 8px 12px;
+                cursor: pointer;
+            }
+
+                ul.ks-cboxtags4 li label::before {
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 12px;
+                    padding: 2px 6px 2px 2px;
+                    transition: transform .3s ease-in-out;
+                }
+
+            ul.ks-cboxtags4 li input[type="radio"]:checked + label::before {
+                transform: rotate(-360deg);
+                transition: transform .3s ease-in-out;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"]:checked + label {
+                border: 2px solid #1bdbf8;
+                background-color: #1b6ec2;
+                color: #fff;
+                transition: all .2s;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"] {
+                display: absolute;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+            }
+
+                ul.ks-cboxtags4 li input[type="radio"]:focus + label {
+                    border: 2px solid black;
+                }
+
+
+    ul.ks-cboxtagsAllergies {
+        list-style: none;
+        padding: 20px;
+    }
+
+
+
+        ul.ks-cboxtagsAllergies li {
+            display: inline;
+        }
+
+            ul.ks-cboxtagsAllergies li label {
+                display: inline-block;
+                background-color: rgba(255, 255, 255, .9);
+                border: 2px solid rgba(139, 139, 139, .3);
+                color: #adadad;
+                border-radius: 25px;
+                white-space: nowrap;
+                margin: 3px 0px;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                transition: all .2s;
+                width: 100px;
+                margin: auto;
+            }
+
+            ul.ks-cboxtagsAllergies li label {
+                padding: 8px 12px;
+                cursor: pointer;
+            }
+
+                ul.ks-cboxtagsAllergies li label::before {
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 12px;
+                    padding: 2px 6px 2px 2px;
+                    transition: transform .3s ease-in-out;
+                    content: '\2715';
+                    float: right;
+                }
+
+            ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label::before {
+                transform: rotate(-360deg);
+                transition: transform .3s ease-in-out;
+            }
+
+            ul.ks-cboxtagsAllergies li input[type="checkbox"]:checked + label {
+                border: 2px solid #1bdbf8;
+                background-color: #1b6ec2;
+                color: #fff;
+                transition: all .2s;
+            }
+
+            ul.ks-cboxtagsAllergies li input[type="checkbox"] {
+                display: absolute;
+            }
+
+            ul.ks-cboxtagsAllergies li input[type="checkbox"] {
+                position: absolute;
+                opacity: 0;
+            }
+
+                ul.ks-cboxtagsAllergies li input[type="checkbox"]:focus + label {
+                    border: 2px solid black;
+                }
+
+    #nutrition {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        #nutrition td, #nutrition th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #nutrition tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #nutrition tr:hover {
+            background-color: #ddd;
+        }
+
+        #nutrition th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #1b6ec2;
+            color: white;
+        }
