@@ -97,6 +97,27 @@ using ccBlazor.Components;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "/Users/matia/ccBlazor/Components/PersonInf.razor"
 using System.ComponentModel.DataAnnotations;
 

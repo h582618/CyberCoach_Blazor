@@ -97,6 +97,20 @@ using ccBlazor.Components;
 #line hidden
 #nullable disable
 #nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "/Users/matia/ccBlazor/Components/GenerateMealPlan.razor"
 using ccBlazor.Data;
 

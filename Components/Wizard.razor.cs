@@ -9,6 +9,7 @@ namespace ccBlazor.Components
     /// </summary>
     public partial class Wizard
     {
+        
         /// <summary>
         /// List of <see cref="WizardStep"/> added to the Wizard
         /// </summary>
@@ -57,10 +58,14 @@ namespace ccBlazor.Components
         /// <summary>
         /// Sets the <see cref="ActiveStep"/> to the next Index
         /// </summary>
-        protected internal void GoNext()
+        protected internal void GoNext(NavigationManager nav)
         {
             if (ActiveStepIx < Steps.Count - 1)
                 SetActive(Steps[(Steps.IndexOf(ActiveStep) + 1)]);
+                Console.WriteLine($"{nav.BaseUri}/#DemoWizard");
+                nav.NavigateTo($"{nav.BaseUri}/om_deg#DemoWizard");
+
+
         }
 
         /// <summary>

@@ -1,25 +1,24 @@
 ﻿@page "/generateexercise"
-
-    <CascadingValue Value="this">
-        @{ List<Data.Exercise> exercisesGen = Generateexercises(days);
-            //int dayCount = 0;
-            if (exercisesGen != null)
+<CascadingValue Value="this">
+    @{ List<Data.Exercise> exercisesGen = Generateexercises(days);
+        //int dayCount = 0;
+        if (exercisesGen != null)
+        {
+            bool first = true;
+            int v = 1;
+            int b = 0;
+            for (int i = 0; i < exercisesGen.Count; i++)
             {
-                bool first = true;
-                int v = 1;
-                Console.WriteLine(v);
-                Console.WriteLine(currentDay);
-                for (int i = 0; i < exercisesGen.Count; i++)
+
+
+                if (exercisesGen[i].newDay != null)
                 {
-
-
-                    if (exercisesGen[i].newDay != null)
+                    if (!first)
                     {
-                        if (!first)
-                        {
-                            v++;
-                        }
-                        if(v == currentDay) { 
+                        v++;
+                    }
+                    if (v == currentDay)
+                    {
                         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
                         <p style="width:100%">               </p>
                         <div style="
@@ -34,29 +33,58 @@
                             </div>
                         </div>
 
-                        }
-                        first = false;
                     }
-                    else
+                    first = false;
+                }
+                else
+                {
+
+                    if (v == currentDay)
                     {
-                        if (v == currentDay)
-                        {
+                        int copy = b;
+                        //Console.WriteLine(show[b]);
+
                         <p> </p>
-                        <div class="exercisesTxt">
-                            <span class="exercises">
+                        <div class="containerBody">
+                            <ul class="ks-cboxtagsExercise">
+                                <li>
+                                    <input id="@exercisesGen[i].name" type="checkbox" @onclick="(() => show[copy] = !show[copy])" />
+                                    <label for="@exercisesGen[i].name">    @exercisesGen[i].name @exercisesGen[i].repsSets </label>
+                                </li>
+                            </ul>
 
-                                <p style="font-weight: bold;">  @exercisesGen[i].name</p>
-                                <p> Muscle targeted : @exercisesGen[i].muscle_Targeted</p>
-                                <p> Equipment type : @exercisesGen[i].equipment_Type</p>
-                                <p> 4 X 8</p>
-                                <img src="@exercisesGen[i].src" width="200" height="200">
+                            <div class="exercisesTxt">
+                              
+                                    @if (show[b])
+                                    {
 
-                            </span>
+                                        <br />
+                                        <p> Muskel : @exercisesGen[i].muscle_Targeted</p>
+                                        <p> Utstyr : @exercisesGen[i].equipment_Type</p>
+                                        <p> @exercisesGen[i].repsSets </p>
+                                        <p> @exercisesGen[i].rest  </p>
+                                        <p> @exercisesGen[i].info  </p>
+                                        @if (@exercisesGen[i].video != null)
+                                        {
+                                            <p> <a href="@exercisesGen[i].video" target="_blank" rel="noopener noreferrer"> Instruksjonsvideo </a> </p>
+                                        }
+                                        <img src="@exercisesGen[i].src" width="200" height="200">
+
+                                    }
+
+                            </div>
                         </div>
                         <p>   </p>
-                            }
-                        }
+                        b++;
                     }
                 }
             }
-    </CascadingValue>
+        }
+    }
+</CascadingValue>
+
+@code {
+    public Boolean[] show { get; set; } = new bool[50];
+
+}
+

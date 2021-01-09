@@ -1,14 +1,37 @@
-﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default">
+﻿<Properties StartupConfiguration="{9F2E6091-454B-4251-B5E7-76EA1E9F7AD6}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.ItemProperties.ccBlazor PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/WizardDemo.razor">
+    <Files>
+      <File FileName="Components/RedirectToAboutMe.razor" Line="1" Column="1" IsPinned="True" />
+      <File FileName="Data/Splits/FB.cs" />
+      <File FileName="Components/Wizard.razor" />
+      <File FileName="Pages/Welcome.razor" />
+      <File FileName="Shared/NavMenu.razor" />
+      <File FileName="Pages/Checkboxlist.razor" />
+      <File FileName="Components/Wizard.razor.cs" />
+      <File FileName="wwwroot/css/bootstrap/bootstrap.min.css" />
+      <File FileName="appsettings.Development.json" />
+      <File FileName="appsettings.json" />
+      <File FileName="Data/Splits/UL.cs" />
+      <File FileName="Pages/WizardDemo.razor" Line="15" Column="19" />
+      <File FileName="Models/PersonInf_Model.cs" Line="13" Column="32" NotebookId="1" />
+      <File FileName="Components/GenerateMealPlan.razor" NotebookId="1" />
+      <File FileName="Components/GenerateExercise.razor" NotebookId="1" />
+      <File FileName="Data/Exercise.cs" NotebookId="1" />
+      <File FileName="Data/Splits/PPL.cs" NotebookId="1" />
+      <File FileName="wwwroot/css/site.css" NotebookId="1" />
+      <File FileName="Data/Exercises.cs" NotebookId="1" />
+      <File FileName="Components/GenerateExercise.razor.cs" NotebookId="1" />
+      <File FileName="_Imports.razor" NotebookId="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="ccBlazor" expanded="True">
             <Node name="ccBlazor" expanded="True">
               <Node name="Components" expanded="True">
                 <Node name="GenerateExercise.razor" expanded="True" />
-                <Node name="Wizard.razor" expanded="True" />
               </Node>
               <Node name="Data" expanded="True">
                 <Node name="Splits" expanded="True" />
@@ -17,13 +40,11 @@
               <Node name="Pages" expanded="True">
                 <Node name="WizardDemo.razor" selected="True" />
               </Node>
+              <Node name="Properties" expanded="True" />
               <Node name="Shared" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="wwwroot" expanded="True">
-                <Node name="css" expanded="True">
-                  <Node name="bootstrap" expanded="True" />
-                </Node>
-                <Node name="Img" expanded="True" />
+                <Node name="css" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -10,8 +10,8 @@ a, .btn-link {
 
 .btn-primary {
     color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    background-color: #489cc8;
+    border-color: #489cc8;
 }
 
 app {
@@ -47,7 +47,7 @@ app {
 }
 
 .sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #047bfe 70%);
+    background-image: linear-gradient(180deg, rgb(72 156 200) 0%, #489cc8 70%);
 }
 
     .sidebar .top-row {
@@ -185,16 +185,15 @@ app {
     display: inline-block;
     border: 4px double black;
     width: 350px;
-    height:400px;
-    float:left; 
-  
+    height: 5%;
+    float: left;
 }
 .exercisesHeader {
     text-align: center;
     
 }
 .exercisesTxt {
-    text-align: center;
+    margin-left: 5%;
 }
 .container1 {
     max-width: 100%;
@@ -310,14 +309,6 @@ app {
         text-transform: uppercase;
     }
 
-.boxBody {
-    height: 345px;
-    margin: auto;
-    padding: 0px;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
 @media screen and (min-width: 480px) {
     .boxBody {
         width: 510px;
@@ -367,7 +358,7 @@ app {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
             transition: all .2s;
-            width: 31%;
+            width: 300px;
             margin: auto;
         }
     }
@@ -414,12 +405,12 @@ app {
         transition: transform .3s ease-in-out;
     }
 
-    ul.ks-cboxtags li input[type="checkbox"]:checked + label {
-        border: 2px solid #1bdbf8;
-        background-color: #1b6ec2;
-        color: #fff;
-        transition: all .2s;
-    }
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #489cc8;
+    color: #fff;
+    transition: all .2s;
+}
 
     ul.ks-cboxtags li input[type="checkbox"] {
         display: absolute;
@@ -439,12 +430,12 @@ app {
         transition: transform .3s ease-in-out;
     }
 
-    ul.ks-cboxtags li input[type="radio"]:checked + label {
-        border: 2px solid #1bdbf8;
-        background-color: #1b6ec2;
-        color: #fff;
-        transition: all .2s;
-    }
+ul.ks-cboxtags li input[type="radio"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #489cc8;
+    color: #fff;
+    transition: all .2s;
+}
 
     ul.ks-cboxtags li input[type="radio"] {
         display: absolute;
@@ -530,12 +521,12 @@ ul.ks-cboxtags2 li label {
         transition: transform .3s ease-in-out;
     }
 
-    ul.ks-cboxtags2 li input[type="checkbox"]:checked + label {
-        border: 2px solid #1bdbf8;
-        background-color: #1b6ec2;
-        color: #fff;
-        transition: all .2s;
-    }
+ul.ks-cboxtags2 li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #489cc8;
+    color: #fff;
+    transition: all .2s;
+}
 
     ul.ks-cboxtags2 li input[type="checkbox"] {
         display: absolute;
@@ -606,7 +597,7 @@ ul.ks-cboxtags2 li label {
 
             ul.ks-cboxtags3 li input[type="checkbox"]:checked + label {
                 border: 2px solid #1bdbf8;
-                background-color: #1b6ec2;
+                background-color: #489cc8;
                 color: #fff;
                 transition: all .2s;
             }
@@ -681,7 +672,7 @@ ul.ks-cboxtags2 li label {
 
             ul.ks-cboxtags4 li input[type="radio"]:checked + label {
                 border: 2px solid #1bdbf8;
-                background-color: #1b6ec2;
+                background-color: #489cc8;
                 color: #fff;
                 transition: all .2s;
             }
@@ -775,15 +766,187 @@ ul.ks-cboxtags2 li label {
                     border: 2px solid black;
                 }
 
+
+ul.ks-cboxtags4 {
+        list-style: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+
+
+        ul.ks-cboxtags4 li {
+            display: inline;
+        }
+
+            ul.ks-cboxtags4 li label {
+                display: inline-block;
+                background-color: rgba(255, 255, 255, .9);
+                border: 2px solid rgba(139, 139, 139, .3);
+                color: #adadad;
+                border-radius: 25px;
+                white-space: nowrap;
+                margin: 3px 0px;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+                transition: all .2s;
+                width: 100px;
+                margin: auto;
+            }
+
+            ul.ks-cboxtags4 li label {
+                padding: 8px 12px;
+                cursor: pointer;
+            }
+
+                ul.ks-cboxtags4 li label::before {
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    font-size: 12px;
+                    padding: 2px 6px 2px 2px;
+                    transition: transform .3s ease-in-out;
+                }
+
+            ul.ks-cboxtags4 li input[type="radio"]:checked + label::before {
+                transform: rotate(-360deg);
+                transition: transform .3s ease-in-out;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"]:checked + label {
+                border: 2px solid #1bdbf8;
+                background-color: #489cc8;
+                color: #fff;
+                transition: all .2s;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"] {
+                display: absolute;
+            }
+
+            ul.ks-cboxtags4 li input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+            }
+
+                ul.ks-cboxtags4 li input[type="radio"]:focus + label {
+                    border: 2px solid black;
+                }
+
+ul.ks-cboxtagsExercise {
+    list-style: none;
+    padding: 20px;
+}
+
+
+
+    ul.ks-cboxtagsExercise li {
+        display: inline;
+    }
+
+@media screen and (min-width: 480px) {
+    ul.ks-cboxtagsExercise li label {
+        display: block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(139, 139, 139, .3);
+        color: #adadad;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+ul.ks-cboxtagsExercise li label {
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+    width: 30%;
+    margin: auto;
+}
+
+ul.ks-cboxtagsExercise li label {
+    padding: 8px 12px;
+    cursor: pointer;
+    float: left;
+}
+
+    ul.ks-cboxtagsExercise li label::before {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 12px;
+        padding: 2px 6px 2px 2px;
+        transition: transform .3s ease-in-out;
+    }
+
+ul.ks-cboxtagsExercise li input[type="checkbox"]:checked + label::before {
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtagsExercise li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #489cc8;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtagsExercise li input[type="checkbox"] {
+    display: absolute;
+}
+
+ul.ks-cboxtagsExercise li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+    ul.ks-cboxtags2 li input[type="checkbox"]:focus + label {
+        border: 2px solid black;
+    }
+
     #nutrition {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
         width: 100%;
     }
 
+
         #nutrition td, #nutrition th {
-            border: 1px solid #ddd;
-            padding: 8px;
+        border: 1px solid #ddd;
+        padding: 8px;
+        
         }
 
         #nutrition tr:nth-child(even) {
@@ -798,6 +961,70 @@ ul.ks-cboxtags2 li label {
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #1b6ec2;
+            background-color: #489cc8;
             color: white;
         }
+.wheight {
+    display: inline-block;
+    margin-left: 2%;
+    width: 7%;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    #nutrition td, #nutrition th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 6px;
+    }
+
+    .exercises {
+        display: inline-block;
+        border: 4px double black;
+        width: 100%;
+        height: 5%;
+        float: left;
+    }
+
+    .h3 {
+        font-size: 100%;
+    }
+
+    .h4 {
+        font-size: 100%
+    }
+
+    ul.ks-cboxtags4 {
+        list-style: none;
+        padding: 13%;
+        text-align: center;
+        display: inline-flex;
+    }
+
+        ul.ks-cboxtags4 li label {
+            padding: 8px 12px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 80%;
+        }
+    .wheight {
+        display: inline-block;
+        margin-left: 2%;
+        width: 13%;
+    }
+    ul.ks-cboxtags2 li label {
+        padding: 0px 0px;
+        cursor: pointer;
+    }
+    ul.ks-cboxtags4 li input[type="radio"] {
+        opacity: 0;
+    }
+    .boxBody {
+        margin: auto;
+        padding: 0px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+ }

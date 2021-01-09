@@ -96,6 +96,27 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/generateexercise")]
     public partial class GenerateExercise : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -104,6 +125,15 @@ using ccBlazor.Components;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 86 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
+       
+    public Boolean[] show { get; set; } = new bool[50];
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

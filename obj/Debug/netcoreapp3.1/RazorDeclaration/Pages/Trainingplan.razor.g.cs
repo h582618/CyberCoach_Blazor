@@ -90,6 +90,27 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
 using ccBlazor.Components;
 
@@ -105,13 +126,21 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 51 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
+#line 59 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
                
             public int currentDayInt { get; set; } = 1;
 
-            public String currentDay { get; set; } = "monday";
+            public String currentDay { get; set; }
 
             public int week { get; set; } = 1;
+
+            protected override void OnInitialized()
+            {
+                if (ViewModel.submitted) {
+                    this.currentDay = ViewModel.preferedDays[0];
+                }
+            }
+
 
             public void setCurrentDay(String t, int i)
             {

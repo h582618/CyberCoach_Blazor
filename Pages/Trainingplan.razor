@@ -1,6 +1,10 @@
 ﻿@page "/treningsplan"
 @using ccBlazor.Components
 @inject PersonInf_Model ViewModel
+
+
+@if (ViewModel.submitted)
+{
 <fieldset class="border p-8">
     <div class="containerBody">
         <h3>Treningsplan for @ViewModel.name </h3>
@@ -10,7 +14,7 @@
 </fieldset>
 <div class="card-body">
     <div class="containerBody">
-        @if (ViewModel.trainingDays < 4)
+        @if (ViewModel.trainingDays < 4 && ViewModel.trainingDays > 1)
         {
 
             <ul class="ks-cboxtags4">
@@ -27,8 +31,8 @@
                 }
             </ul>
             <br />
-   
-}   
+
+                    }   
                 <ul class="ks-cboxtags4">
                     @{ int i = 1;
                         foreach (String t in ViewModel.preferedDays)
@@ -36,7 +40,7 @@
 
                             <li>
                                 <input type="radio" id="@t" value="@i"
-                                       @onchange=@((_e) => setCurrentDay(t,Int16.Parse(_e.Value.ToString())))
+                                       @onchange=@((_e) => setCurrentDay(t, Int16.Parse(_e.Value.ToString())))
                                        checked=@(currentDay == t) />
                                 <label for="@t"> @dayToNorwegian(t)</label>
                             </li>
@@ -47,13 +51,25 @@
                 <br />
             </div>
         </div>
-        <GenerateExercise days="@ViewModel.trainingDays" currentDay="currentDayInt" week="week"> </GenerateExercise>
+        <GenerateExercise experienceLevel="@ViewModel.experienceLevel" days="@ViewModel.trainingDays" currentDay="currentDayInt" week="week"> </GenerateExercise>
+                        } else
+                        {
+                           <RedirectToAboutMe />
+                        }
         @code {
             public int currentDayInt { get; set; } = 1;
 
-            public String currentDay { get; set; } = "monday";
+            public String currentDay { get; set; }
 
             public int week { get; set; } = 1;
+
+            protected override void OnInitialized()
+            {
+                if (ViewModel.submitted) {
+                    this.currentDay = ViewModel.preferedDays[0];
+                }
+            }
+
 
             public void setCurrentDay(String t, int i)
             {

@@ -1,5 +1,6 @@
 ﻿@inject PersonInf_Model ViewModel
 @inject NavigationManager Navigation
+@inject IJSRuntime JSRuntime
 <CascadingValue Value="this">
     <EditForm Model="ViewModel" OnSubmit=@FormSubmitted>
         <div id="@Id">
@@ -36,4 +37,8 @@
         ViewModel.submitted = true;
         Navigation.NavigateTo("/", forceLoad: true);
     }
-} 
+    void GoNext()
+    {
+        GoNext(Navigation);
+    }
+}

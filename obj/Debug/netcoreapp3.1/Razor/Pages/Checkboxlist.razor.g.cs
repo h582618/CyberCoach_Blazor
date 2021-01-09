@@ -93,6 +93,27 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/checkboxlist")]
     public partial class Checkboxlist : Microsoft.AspNetCore.Components.ComponentBase
     {

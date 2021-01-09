@@ -91,3 +91,14 @@
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Trainingplan.razor.g.cs
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/GymPlan.razor.g.cs
 /Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Pages/Trainingplan.razor.g.cs
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/MessagePack.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Http.Connections.Client.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.Azure.SignalR.Common.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.Azure.SignalR.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.Azure.SignalR.Protocols.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Logging.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/Microsoft.IdentityModel.Tokens.dll
+/Users/matia/ccBlazor/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/RazorDeclaration/Components/RedirectToAboutMe.razor.g.cs
+/Users/matia/ccBlazor/obj/Debug/netcoreapp3.1/Razor/Components/RedirectToAboutMe.razor.g.cs

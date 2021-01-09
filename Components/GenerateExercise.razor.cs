@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using System.Threading.Tasks;
+using ccBlazor.Data;
 using Microsoft.AspNetCore.Components;
 
 namespace ccBlazor.Components
 {
     public partial class GenerateExercise
     {
-        public static List<Data.Exercise> exercises = Data.Exercises.getExerises();
-        public static Data.Splits.PPL ppl = new Data.Splits.PPL(exercises);
-        public static Data.Splits.UL ul = new Data.Splits.UL(exercises);
+        public static List<Data.Exercise> exercises = Exercises.getExerises();
+        //public static Data.Splits.PPL ppl = new Data.Splits.PPL(exercises);
+        //public static Data.Splits.UL ul = new Data.Splits.UL(exercises);
   
 
         [Parameter]
@@ -21,31 +25,121 @@ namespace ccBlazor.Components
         public int week { get; set; }
 
         [Parameter]
+        public int experienceLevel { get; set; }
+
+        [Parameter]
         public List<String> preferedDays { get; set; }
+
+     
+
+        /*
+        protected override async Task OnInitializedAsync()
+        {
+            var json = await File.ReadAllTextAsync("wwwroot/Exercises/exercises80_2.json");
+            exercises = JsonSerializer.Deserialize<List<Data.Exercise>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }*/
+
+
 
         public List<Data.Exercise> Generateexercises(int days)
         {
 
             List<Data.Exercise> exercisesGen = null;
 
-            switch (days)
+            switch (experienceLevel)
             {
                 case 1:
-                    exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
+                    switch (days)
+                    {
+                        case 1:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week,experienceLevel).fullBody;
+                            break;
+                        case 2:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 3:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 4:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+
+                    }
                     break;
                 case 2:
-                    exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
+                    switch (days)
+                    {
+                        case 1:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week,experienceLevel).fullBody;
+                            break;
+                        case 2:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 3:
+                            exercisesGen = new Data.Splits.UL(exercises, days, week,experienceLevel).UpperLower;
+                            break;
+                        case 4:
+                            exercisesGen = new Data.Splits.UL(exercises, days, week, experienceLevel).UpperLower;
+                            break;
+                        case 5:
+                            exercisesGen = new Data.Splits.UL(exercises, days, week, experienceLevel).UpperLower;
+                            break;
+                        case 6:
+                            break;
+
+                    }
                     break;
                 case 3:
-                    exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
-                    break;
-                case 4:
-                    exercisesGen = ul.UpperLower;
+                    switch (days)
+                    {
+                        case 1:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 2:
+                            exercisesGen = new Data.Splits.FB(exercises, days, week, experienceLevel).fullBody;
+                            break;
+                        case 3:
+                            exercisesGen = new Data.Splits.UL(exercises, days, week, experienceLevel).UpperLower;
+                            break;
+                        case 4:
+                            exercisesGen = new Data.Splits.UL(exercises, days, week, experienceLevel).UpperLower;
+                            break;
+                        case 5:
+                            exercisesGen = new Data.Splits.PPL(exercises, days, week, experienceLevel).PushPullLegs;
+                            break;
+                        case 6:
+                            exercisesGen = new Data.Splits.PPL(exercises, days, week, experienceLevel).PushPullLegs;
+                            break;
+                    }
                     break;
                 default:
-                    exercisesGen = ppl.PushPullLegs;
+                    exercisesGen = new Data.Splits.PPL(exercises, days, week, experienceLevel).PushPullLegs;
                     break;
             }
+            /*
+            switch (days)
+    {
+        case 1:
+            exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
+            break;
+        case 2:
+            exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
+            break;
+        case 3:
+            exercisesGen = new Data.Splits.FB(exercises, days, week).fullBody;
+            break;
+        case 4:
+            exercisesGen = ul.UpperLower;
+            break;
+        default:
+            exercisesGen = ppl.PushPullLegs;
+            break;
+    }
+    */
             /*
             if (days == 6)
             {
@@ -56,7 +150,7 @@ namespace ccBlazor.Components
                 exercisesGen = ul.UpperLower;
             }
             */
-            return exercisesGen;
+                    return exercisesGen;
         }
     }
 }

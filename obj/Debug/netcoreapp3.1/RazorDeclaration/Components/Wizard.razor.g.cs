@@ -96,6 +96,27 @@ using ccBlazor.Components;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
     public partial class Wizard : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -104,17 +125,22 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "/Users/matia/ccBlazor/Components/Wizard.razor"
+#line 34 "/Users/matia/ccBlazor/Components/Wizard.razor"
        
     void FormSubmitted()
     {
         ViewModel.submitted = true;
         Navigation.NavigateTo("/", forceLoad: true);
     }
+    void GoNext()
+    {
+        GoNext(Navigation);
+    }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JSRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager Navigation { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private PersonInf_Model ViewModel { get; set; }
     }

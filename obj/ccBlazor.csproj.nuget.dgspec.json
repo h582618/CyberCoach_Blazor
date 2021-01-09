@@ -48,13 +48,17 @@
               "target": "Package",
               "version": "[2.7.0, )"
             },
+            "Microsoft.Azure.SignalR": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[2.15.17, )"
+              "version": "[2.18.8, )"
             }
           },
           "imports": [

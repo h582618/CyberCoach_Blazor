@@ -90,8 +90,36 @@ using Radzen.Blazor;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Data.Splits;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "/Users/matia/ccBlazor/_Imports.razor"
+using ccBlazor.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
 using ccBlazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 358 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+using System.Collections;
 
 #line default
 #line hidden
@@ -105,9 +133,8 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 335 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
-       
-
+#line 358 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+                             
 
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",
                         "Img/Bryst.jpg", "Img/Armer.jpg", "Img/Kjernen.jpg",

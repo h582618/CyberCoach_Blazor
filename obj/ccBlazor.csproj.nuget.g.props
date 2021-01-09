@@ -25,7 +25,7 @@
     </Content>
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)radzen.blazor/2.15.17/buildTransitive/Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor/2.15.17/buildTransitive/Radzen.Blazor.props')" />
+    <Import Project="$(NuGetPackageRoot)radzen.blazor/2.18.8/buildTransitive/Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor/2.18.8/buildTransitive/Radzen.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)matblazor/2.7.0/buildTransitive/MatBlazor.props" Condition="Exists('$(NuGetPackageRoot)matblazor/2.7.0/buildTransitive/MatBlazor.props')" />
   </ImportGroup>
 </Project>

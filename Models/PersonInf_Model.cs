@@ -25,11 +25,12 @@ namespace ccBlazor.Components
         public List<int> goal { get; set; }
         public List<string> GenderChoices { get; }
         public Dictionary<int, string> GoalChoices { get; }
-        public String gender { get; set; }
+        public String gender { get; set; } = "Male";
         public double weight { get; set; }
         public double height { get; set; }
 
         public int activityLevel {get; set; }
+        public int experienceLevel { get; set; }
 
         public bool submitted { get; set; }
 
@@ -88,17 +89,21 @@ namespace ccBlazor.Components
 
         }
 
-        public void SetWeight(double weight)
+        public void SetWeight(String weight)
         {
-            Console.WriteLine(weight);
-            this.weight = weight;
-          
+            if(weight.Trim() != "")
+            {
+                this.weight = Int64.Parse(weight);
+            }
+ 
         }
-        public void SetHeight(double height)
+        public void SetHeight(String height)
         {
-            Console.WriteLine(height);
-            this.height = height;
-            
+            if (height.Trim() != "")
+            {
+                this.height = Int64.Parse(height);
+            }
+
         }
 
         public void SetMail(String mail)
@@ -153,7 +158,7 @@ namespace ccBlazor.Components
         }
         public void SetGoal(int goal, bool add)
         {
-            Console.WriteLine(goal + " " + add);
+         
             
             if (add)
             {
@@ -163,12 +168,18 @@ namespace ccBlazor.Components
             {
                 this.goal.Remove(goal);
             }
-            Console.WriteLine(this.goal.Count);
+          
         }
         public void setActivityLevel(String value)
         {
             this.activityLevel = int.Parse(value);
         
+        }
+
+        public void setExperienceLevel(String value)
+        {
+            this.experienceLevel = int.Parse(value);
+
         }
         public void setPreferedDays(String value, bool add)
         {
@@ -189,13 +200,21 @@ namespace ccBlazor.Components
 
         public void setTrainingDays(String value)
         {
+            int difference = preferedDays.Count - int.Parse(value);
             this.trainingDays = int.Parse(value);
-            Console.WriteLine(value);
+            if(difference > 0)
+            {
+               for(int i = 0; i < difference; i++)
+                {
+                    preferedDays.RemoveAt(preferedDays.Count - 1);
+                }
+            };
+      
         }
         public void setMealAmount(String value)
         {
             this.mealAmount = int.Parse(value);
-            Console.WriteLine(value);
+            
         }
 
         public void removeAllergy(String value)

@@ -10,15 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ccBlazor</title>
     <base href="~/" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <script src="_content/MatBlazor/dist/matBlazor.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+
 
 </head>
 <body>
     <app>
-        <component type="typeof(App)" render-mode="ServerPrerendered" />
+  <component type="typeof(App)" render-mode="Server" />
     </app>
 
     <div id="blazor-error-ui">
