@@ -126,70 +126,96 @@ using ccBlazor.Components;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
-               
-            public int currentDayInt { get; set; } = 1;
+#line 92 "/Users/matia/ccBlazor/Pages/Trainingplan.razor"
+           
 
-            public String currentDay { get; set; }
+      
 
-            public int week { get; set; } = 1;
+        public bool createNew = false;
 
-            protected override void OnInitialized()
+        public String exerciseInfo = "exercisesInfo";
+
+        public String classname = "containerBody3";
+
+        public int currentDayInt { get; set; } = 1;
+
+        public String currentDay { get; set; }
+
+        public int week { get; set; } = 1;
+
+        protected override void OnInitialized()
+        {
+            if (ViewModel.submitted)
             {
-                if (ViewModel.submitted) {
-                    this.currentDay = ViewModel.preferedDays[0];
-                }
+                this.currentDay = ViewModel.preferedDays[0];
             }
+        }
 
 
-            public void setCurrentDay(String t, int i)
-            {
-                this.currentDay = t;
-                this.currentDayInt = i;
-            }
+        public void setCurrentDay(String t, int i)
+        {
+            this.currentDay = t;
+            this.currentDayInt = i;
+            createNew = true;
+        }
 
-            String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+        String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+        {
+            if (weightLoss)
             {
-                if (weightLoss)
-                {
-                    return "Vektnedgang";
-                }
-                else if (fatLoss)
-                {
-                    return "Fett reduksjon";
-                }
-                else if (muscleIncrease)
-                {
-                    return "Muskeløkning";
-                }
-                else
-                {
-                    return "Vedlikehold";
-                }
+                return "Vektnedgang";
             }
-            public String dayToNorwegian(String day)
+            else if (fatLoss)
             {
-                switch (day)
-                {
-                    case "monday":
-                        return "Mandag";
-                    case "tuesday":
-                        return "Tirsdag";
-                    case "wednesday":
-                        return "Onsdag";
-                    case "thursday":
-                        return "Torsdag";
-                    case "friday":
-                        return "Friday";
-                    case "saturday":
-                        return "Lørdag";
-                    case "sunday":
-                        return "Sunday";
-                    default:
-                        return " ";
-                }
+                return "Fett reduksjon";
             }
-        
+            else if (muscleIncrease)
+            {
+                return "Muskeløkning";
+            }
+            else
+            {
+                return "Vedlikehold";
+            }
+        }
+
+        String findLevel(int n)
+        {
+            switch (n)
+            {
+                case 1:
+                    return "Nybegynner";
+                case 2:
+                    return "Erfaren";
+                case 3:
+                    return "Viderkommende";
+
+            }
+            return "Ukjent";
+        }
+        public String dayToNorwegian(String day)
+        {
+            switch (day)
+            {
+                case "monday":
+                    return "Mandag";
+                case "tuesday":
+                    return "Tirsdag";
+                case "wednesday":
+                    return "Onsdag";
+                case "thursday":
+                    return "Torsdag";
+                case "friday":
+                    return "Friday";
+                case "saturday":
+                    return "Lørdag";
+                case "sunday":
+                    return "Sunday";
+                default:
+                    return " ";
+            }
+        }
+    
 
 #line default
 #line hidden

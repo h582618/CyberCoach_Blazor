@@ -30,7 +30,9 @@ namespace ccBlazor.Components
         [Parameter]
         public List<String> preferedDays { get; set; }
 
-     
+        [Parameter]
+        public bool[] show { get; set; }
+
 
         /*
         protected override async Task OnInitializedAsync()

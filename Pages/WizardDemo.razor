@@ -19,7 +19,7 @@
             </div>
             <div class="card-body">
                 <input placeholder="Alder" type="number" value="@(ViewModel.age != 0 ? ViewModel.age.ToString() : "" )"
-                       @onchange=@((_e) =>  ViewModel.SetAge(Int16.Parse(_e.Value.ToString().Trim()))) />
+                       @onchange=@((_e) =>  ViewModel.SetAge(_e.Value.ToString().Trim())) />
             </div>
             <div class="card-body">
                 <input placeholder="E-Mail" type="text" value="@ViewModel.mail" bind="@ViewModel.mail"
@@ -34,36 +34,39 @@
             <div class="card-body">
                 <h6>Vekt</h6>
                 <RadzenSlider @bind-Value=@ViewModel.weight TValue="double" Min="0" Max="200" />
-                <input class="wheight"placeholder="Kg" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
+                <input class="wheight" placeholder="Kg" type="number" value="@(ViewModel.weight != 0 ? ViewModel.weight.ToString() : "" )"
                        @onchange=@((_e) => ViewModel.SetWeight(_e.Value.ToString().Trim())) />
 
             </div>
-          
-                <div class="card-body">
-                    <div class="btns">
-                        <h6 class="card-title">Velg kjønn</h6>
-                        <div class="kjonn">
-                            <label>
-                                <input type="radio" name="genderRadio" id="optionsRadios2" value="Male"
-                                       @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
-                                       checked=@(ViewModel.gender=="Male") />
+
+            <div class="card-body">
+                <div class="btns">
+                    <h6 class="card-title">Velg kjønn</h6>
+                    <div class="kjonn">
+                        <label>
+                            <input type="radio" name="genderRadio" id="optionsRadios2" value="Male"
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
+                                   checked=@(ViewModel.gender=="Male") />
 
 
-                                <i class="zmdi zmdi-male-alt zmdi-hc-5x"></i>
-                            </label>
-                        </div>
-                        <div class="kjonn">
-                            <label>
-                                <input type="radio" name="genderRadio" id="optionsRadios1" value="Female"
-                                       @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
-                                       checked=@(ViewModel.gender=="Female")>
-                                <i class="zmdi zmdi-female zmdi-hc-5x"></i>
-                            </label>
+                            <i class="zmdi zmdi-male-alt zmdi-hc-5x"></i>
+                        </label>
+                    </div>
+                    <div class="kjonn">
+                        <label>
+                            <input type="radio" name="genderRadio" id="optionsRadios1" value="Female"
+                                   @onchange=@((_e) => ViewModel.SetGender(_e.Value.ToString()))
+                                   checked=@(ViewModel.gender=="Female")>
+                            <i class="zmdi zmdi-female zmdi-hc-5x"></i>
+                        </label>
 
-                        </div>
                     </div>
                 </div>
-
+            </div>
+            @if (ViewModel.notValidated)
+            {
+                <p class="validationTxt"> Fyll ut alle felt </p>
+            }
         </fieldset>
         <br />
     </WizardStep>
@@ -122,8 +125,10 @@
                     </li>
                 </ul>
             </div>
-
-
+            @if (ViewModel.notValidated)
+            {
+                <p class="validationTxt"> Fyll ut alle felt </p>
+            }
         </fieldset>
         <br />
     </WizardStep>
@@ -253,7 +258,10 @@
                     <br />
                 </div>
             </div>
-
+            @if (ViewModel.notValidated)
+            {
+                <p class="validationTxt"> Fyll ut alle felt </p>
+            }
 
         </fieldset>
         <br />
@@ -349,6 +357,10 @@
                     }
                 </ul>
             </div>
+            @if (ViewModel.notValidated)
+            {
+                <p class="validationTxt"> Fyll ut alle felt </p>
+            }
         </fieldset>
         <br />
     </WizardStep>

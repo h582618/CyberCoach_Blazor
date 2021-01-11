@@ -530,7 +530,7 @@ namespace ccBlazor.Data.Splits
             PullUps.rest = "2 minutter pause mellom hvert sett";
 
             var barbellShoulderPress = exercises
-           .Find(x => x.muscle_Targeted.Equals("Shoulders") && x.name.ToUpper().Equals("Standing barbell shoulder press".ToUpper()));
+           .Find(x => x.muscle_Targeted.Equals("Shoulders") && x.name.ToUpper().Equals("barbell shoulder press".ToUpper()));
             barbellShoulderPress.repsSets = "3 Sett, 6 - 8 reps";
             barbellShoulderPress.rest = "2-3 minutter pause mellom hvert sett";
 
@@ -573,7 +573,7 @@ namespace ccBlazor.Data.Splits
             splitSquat.rest = "1-2 minutter pause mellom hvert sett";
 
             var lyingLegCurls = exercises
-            .Find(x => x.muscle_Targeted.Equals("Quadriceps") && x.name.ToUpper().Equals("Lying Leg Curls".ToUpper()));
+            .Find(x => x.muscle_Targeted.Equals("Hamstrings") && x.name.ToUpper().Equals("Lying Leg Curls".ToUpper()));
             lyingLegCurls.repsSets = "3 Sett, 10 - 12 reps";
             lyingLegCurls.rest = "1-2 minutter pause mellom hvert sett";
 
@@ -623,6 +623,13 @@ namespace ccBlazor.Data.Splits
             UpperLower.Add(seatedCalfRaise);
             UpperLower.Add(abs);
 
+            var cardio = exercises
+            .Find(x => x.muscle_Targeted.Equals("Quadriceps") && x.name.ToUpper().Equals("Treadmill jogging".ToUpper()));
+            cardio.repsSets = "30-40 min";
+            cardio.info = "Moderat jogge 30-40 min eller <br/> gå i oppover bakke 60-70 min";
+
+            UpperLower.Add(new Exercise("Cardio"));
+            UpperLower.Add(cardio);
 
 
 

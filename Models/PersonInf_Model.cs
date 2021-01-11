@@ -8,13 +8,13 @@ namespace ccBlazor.Components
     public class PersonInf_Model
     {
         [Parameter]
-        public String name { get; set; }
+        public String name { get; set; } = "Matias"; //Verdi kun for testing, fjern senere
         [Parameter]
         public String surname { get; set; }
         [Parameter]
         public int mobile { get; set; }
         [Parameter]
-        public int age { get; set; }
+        public int age { get; set; } = 24; //Verdi kun for testing, fjern senere
         [Parameter]
         public String mail { get; set; }
         [Parameter]
@@ -25,17 +25,17 @@ namespace ccBlazor.Components
         public List<int> goal { get; set; }
         public List<string> GenderChoices { get; }
         public Dictionary<int, string> GoalChoices { get; }
-        public String gender { get; set; } = "Male";
-        public double weight { get; set; }
-        public double height { get; set; }
+        public String gender { get; set; } = "Male"; 
+        public double weight { get; set; } = 74; //Verdi kun for testing, fjern senere
+        public double height { get; set; } = 170.0; //Verdi kun for testing, fjern senere
 
-        public int activityLevel {get; set; }
-        public int experienceLevel { get; set; }
+        public int activityLevel { get; set; } = 1; //Verdi kun for testing, fjern senere 
+        public int experienceLevel { get; set; } = 2; //Verdi kun for testing, fjern senere
 
-        public bool submitted { get; set; }
+        public bool submitted { get; set; } = true; //Verdi kun for testing, fjern senere
 
-        public bool weightLoss { get; set; } 
-        public bool muscleIncrease { get; set; } 
+        public bool weightLoss { get; set; }
+        public bool muscleIncrease { get; set; } = true; //Verdi kun for testing, fjern senere
         public bool maintenance { get; set; }
         public bool fatLoss { get; set; }
 
@@ -47,7 +47,7 @@ namespace ccBlazor.Components
         public bool weaknessAss { get; set; }
         public bool weaknessLegs { get; set; }
 
-        public int trainingDays { get; set; }
+        public int trainingDays { get; set; } = 4; //Verdi kun for testing, fjern senere
         public int mealAmount { get; set; }
         public List<String> preferedDays { get; set; }
 
@@ -57,7 +57,38 @@ namespace ccBlazor.Components
 
         public List<int> goals { get; set; } = new List<int>();
 
+        public bool notValidated { get; set; } = false;
 
+        public String split { get; set; }
+
+        public PersonInf_Model()
+        {
+            GenderChoices = new List<string>();
+            GenderChoices.Add("Male");
+            GenderChoices.Add("Female");
+            GoalChoices = new Dictionary<int, string>();
+            GoalChoices.Add(1, "Vektnedgang");
+            GoalChoices.Add(2, "Muskeløkning");
+            GoalChoices.Add(3, "Vedlikehold");
+            GoalChoices.Add(4, "Fettreduksjon");
+            goal = new List<int>();
+
+            preferedDays = new List<String>();
+
+            //Bare for testing
+
+            preferedDays.Add("monday");
+            preferedDays.Add("tuesday");
+            preferedDays.Add("wednesday");
+            preferedDays.Add("friday");
+
+            //
+
+            allergys = new List<String>();
+
+            disLikes = new List<String>();
+
+        }
         //Eller (daysofweek value + 6) % 7
         public enum DayOfWeek
         {    
@@ -112,11 +143,17 @@ namespace ccBlazor.Components
             this.mail = mail;
         }
 
-        public void SetAge(int age  )
+        public void SetAge(String age)
         {
 
-            Console.WriteLine(age);
-            this.age = age;
+
+            if (age.Trim() != "")
+            {
+                this.age = Int32.Parse(age);
+                Console.WriteLine(age);
+            }
+        
+           
         }
 
         public void setName(String name)
@@ -132,25 +169,7 @@ namespace ccBlazor.Components
             this.surname = surname;
         }
 
-        public PersonInf_Model()
-        {
-            GenderChoices = new List<string>();
-            GenderChoices.Add("Male");
-            GenderChoices.Add("Female");
-            GoalChoices = new Dictionary<int,string>();
-            GoalChoices.Add(1,"Vektnedgang");
-            GoalChoices.Add(2,"Muskeløkning");
-            GoalChoices.Add(3,"Vedlikehold");
-            GoalChoices.Add(4, "Fettreduksjon");
-            goal = new List<int>();
-
-            preferedDays = new List<String>();
-
-            allergys = new List<String>();
-
-            disLikes = new List<String>();
-
-        }
+        
         public void SetGender(string gender)
         {
             Console.WriteLine(gender);

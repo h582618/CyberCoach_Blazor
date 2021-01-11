@@ -8209,9 +8209,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .p-8 {
     padding: .5rem !important;
-    width: auto;
+    width: 600px;
     margin: auto;
-    float: left;
 }
 
     .p-3 {

@@ -118,7 +118,7 @@ using ccBlazor.Components;
 #line hidden
 #nullable disable
 #nullable restore
-#line 358 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+#line 370 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
 using System.Collections;
 
 #line default
@@ -133,7 +133,7 @@ using System.Collections;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 358 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
+#line 370 "/Users/matia/ccBlazor/Pages/WizardDemo.razor"
                              
 
     private static string[] bodyParts = {  "Img/Skulder.jpg", "Img/Rygg.jpg",

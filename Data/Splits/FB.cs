@@ -116,7 +116,7 @@ namespace ccBlazor.Data.Splits
                     .Find(x => x.muscle_Targeted.Equals("Abdominals") && x.name.ToUpper().Equals("Ab Crunch Machine".ToUpper()));
             abs.repsSets = "3-4 Sett, 10 - 12 reps";
             abs.rest = "1 minutt pause mellom hvert sett";
-
+            
             //Middle
 
             var cardio = exercises
@@ -209,7 +209,7 @@ namespace ccBlazor.Data.Splits
             bicepCurl.repsSets = "3 Sett, 10 - 15 reps";
             bicepCurl.rest = "2 minutter pause mellom hvert sett";
 
-            fullBody.Add(new Exercise("Fullbody " + "A"));
+            fullBody.Add(new Exercise("Fullbody"));
             fullBody.Add(squat);
             fullBody.Add(benchpress);
             fullBody.Add(rows);

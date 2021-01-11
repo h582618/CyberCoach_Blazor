@@ -193,7 +193,7 @@ app {
     
 }
 .exercisesTxt {
-    margin-left: 5%;
+    
 }
 .container1 {
     max-width: 100%;
@@ -326,10 +326,26 @@ app {
         
     }
 
-    .containerBody {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 13px;
-    }
+.containerBody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+.containerBody2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    display: inline-block;
+}
+.containerBody3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    width: fit-content;
+}
+.containerBody4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    width: fit-content;
+    margin-left: 3.5%;
+}
 
     ul.ks-cboxtags {
         list-style: none;
@@ -843,7 +859,6 @@ ul.ks-cboxtags4 {
 
 ul.ks-cboxtagsExercise {
     list-style: none;
-    padding: 20px;
 }
 
 
@@ -868,7 +883,7 @@ ul.ks-cboxtagsExercise {
         user-select: none;
         -webkit-tap-highlight-color: transparent;
         transition: all .2s;
-        width: 100%;
+        width: 400px;
         margin: auto;
     }
 }
@@ -888,7 +903,7 @@ ul.ks-cboxtagsExercise li label {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     transition: all .2s;
-    width: 30%;
+    width: 400px;
     margin: auto;
 }
 
@@ -932,9 +947,85 @@ ul.ks-cboxtagsExercise li input[type="checkbox"] {
     opacity: 0;
 }
 
-    ul.ks-cboxtags2 li input[type="checkbox"]:focus + label {
-        border: 2px solid black;
+    ul.ks-cboxtagsExercise li input[type="checkbox"]:focus + label {
+      
     }
+
+
+ul.ks-cboxtagsExerciseSub {
+    list-style: none;
+    padding: 20px;
+}
+
+
+
+    ul.ks-cboxtagsExerciseSub li {
+        display: inline;
+    }
+
+    ul.ks-cboxtagsExerciseSub li label {
+        display: block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(139, 139, 139, .3);
+        color: #adadad;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        tc -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+        width: 300px;
+        margin-left: 50px;
+    }
+
+ul.ks-cboxtagsExerciseSub li label {
+    padding: 8px 12px;
+    cursor: pointer;
+    float: left;
+}
+
+ul.ks-cboxtagsExerciseSub li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtagsExerciseSub li input[type="checkbox"]:checked + label::before {
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtagsExerciseSub li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #489cc8;
+    color: #fff;
+    transition: all .2s;
+}
+
+ul.ks-cboxtagsExerciseSub li input[type="checkbox"] {
+    display: absolute;
+}
+
+ul.ks-cboxtagsExerciseSub li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+    ul.ks-cboxtagsExerciseSub li input[type="checkbox"]:focus + label {
+        border: 2px solid #489cc8;
+    }
+
 
     #nutrition {
         font-family: Arial, Helvetica, sans-serif;
@@ -970,7 +1061,83 @@ ul.ks-cboxtagsExercise li input[type="checkbox"] {
     width: 7%;
 }
 
+.SplitDayHeader {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 120px;
+    color: #636060;
+}
 
+.dayHeader {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 450;
+    font-size: 25px;
+    margin-left: 45%;
+    color: #636060;
+}
+
+
+a {
+    color: #489cc8;
+}
+.trainingContainer {
+}
+
+.exercisesInfo {
+    margin-left:0;
+    float:left;
+}
+
+.exercisesInfo {
+    margin-right: 10%;
+    float: right;
+}
+.exercisesInfo1 {
+    float: right;
+}
+
+
+.clientInfo {
+    float:right;
+}
+.info {
+    display: inline-block;
+    width: 45%;
+    margin-top: 3%;
+}
+.infoText {
+    font-family: "Graphik,sans-serif";
+    font-weight: 450;
+    font-size: 20px;
+    color: #636060;
+}
+
+.splitInfo {
+    font-family: "Graphik,sans-serif";
+    font-weight: 450;
+    font-size: 20px;
+    color: #636060;
+}
+
+
+.clientInfo {
+    float: left;
+    margin-top: 2%;
+    margin-left: 5%;
+    border-radius: 25px;
+}
+.splitInfo {
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    border-radius: 25px;
+}
+
+.validationTxt {
+    text-align:center;
+    color:red;
+}
 
 @media screen and (max-width: 480px) {
     #nutrition td, #nutrition th {
@@ -1026,5 +1193,23 @@ ul.ks-cboxtagsExercise li input[type="checkbox"] {
         text-align: center;
         background-repeat: no-repeat;
         background-size: 100%;
+    }
+    ul.ks-cboxtagsExerciseSub li label {
+        display: block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(139, 139, 139, .3);
+        color: #adadad;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+        width: 300px;
+        margin-left: 50px;
     }
  }

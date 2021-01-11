@@ -231,7 +231,7 @@ namespace ccBlazor.Data.Splits
                 "Ta vekter rundt livet hvis det er for lett.";
 
             var cableCrossover = exercises
-            .Find(x => x.muscle_Targeted.Equals("cHEST") && x.name.ToUpper().Equals("Cable Crossover".ToUpper()));
+            .Find(x => x.muscle_Targeted.Equals("Chest") && x.name.ToUpper().Equals("Cable Crossover".ToUpper()));
             cableCrossover.repsSets = "3 Sett, 8 - 12 reps";
             cableCrossover.rest = "2 minutter pause mellom hvert sett";
 

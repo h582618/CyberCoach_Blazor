@@ -125,15 +125,6 @@ using ccBlazor.Models;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 86 "/Users/matia/ccBlazor/Components/GenerateExercise.razor"
-       
-    public Boolean[] show { get; set; } = new bool[50];
-
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591

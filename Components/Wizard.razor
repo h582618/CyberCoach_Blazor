@@ -37,8 +37,49 @@
         ViewModel.submitted = true;
         Navigation.NavigateTo("/", forceLoad: true);
     }
+
+
     void GoNext()
     {
+
+        switch (ActiveStepIx)
+        {
+            case 0:
+                if(ViewModel.name == "" || ViewModel.surname == "" || ViewModel.age <= 0
+                    || ViewModel.mail == "" || ViewModel.mail == null || ViewModel.height <= 0 || ViewModel.weight <= 0)
+                {
+                    ViewModel.notValidated = true;
+                    return;
+                }
+                break;
+            case 1:
+                if(ViewModel.activityLevel <= 0 || (ViewModel.weightLoss == false && ViewModel.muscleIncrease == false && ViewModel.maintenance == false
+                    && ViewModel.fatLoss == false) || ViewModel.experienceLevel <= 0)
+                {
+                    ViewModel.notValidated = true;
+                    return;
+                }
+                break;
+            case 2:
+
+                break;
+            case 3:
+                if (ViewModel.trainingDays <= 0 || ViewModel.trainingDays != ViewModel.preferedDays.Count)
+                {
+                    ViewModel.notValidated = true;
+                    return;
+                }
+                break;
+            case 4:
+                if (ViewModel.mealAmount <= 0)
+                {
+                    ViewModel.notValidated = true;
+                    return;
+                }
+                break;
+
+        };
+        ViewModel.notValidated = false;
         GoNext(Navigation);
     }
 }

@@ -7,6 +7,8 @@
             bool first = true;
             int v = 1;
             int b = 0;
+            
+            
             for (int i = 0; i < exercisesGen.Count; i++)
             {
 
@@ -19,19 +21,9 @@
                     }
                     if (v == currentDay)
                     {
-                        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                        <p style="width:100%">               </p>
-                        <div style="
-                        text-align: center;
-                        max-width: 100%;
-                        display: inline-block;
-                        " class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <h3> Dag @v :  @exercisesGen[i].newDay </h3>
-                                </div>
-                            </div>
-                        </div>
+
+                                    <h3 class="SplitDayHeader"> Dag @v :  @exercisesGen[i].newDay </h3>
+                           
 
                     }
                     first = false;
@@ -45,32 +37,48 @@
                         //Console.WriteLine(show[b]);
 
                         <p> </p>
-                        <div class="containerBody">
+                        <div class="containerBody2">
                             <ul class="ks-cboxtagsExercise">
                                 <li>
-                                    <input id="@exercisesGen[i].name" type="checkbox" @onclick="(() => show[copy] = !show[copy])" />
+                                    <input id="@exercisesGen[i].name" type="checkbox" @onclick="(() => show[copy] = !show[copy])"
+                                          checked="@show[copy]"/>
                                     <label for="@exercisesGen[i].name">    @exercisesGen[i].name @exercisesGen[i].repsSets </label>
                                 </li>
                             </ul>
 
                             <div class="exercisesTxt">
-                              
-                                    @if (show[b])
-                                    {
 
-                                        <br />
-                                        <p> Muskel : @exercisesGen[i].muscle_Targeted</p>
-                                        <p> Utstyr : @exercisesGen[i].equipment_Type</p>
-                                        <p> @exercisesGen[i].repsSets </p>
-                                        <p> @exercisesGen[i].rest  </p>
-                                        <p> @exercisesGen[i].info  </p>
-                                        @if (@exercisesGen[i].video != null)
-                                        {
-                                            <p> <a href="@exercisesGen[i].video" target="_blank" rel="noopener noreferrer"> Instruksjonsvideo </a> </p>
-                                        }
-                                        <img src="@exercisesGen[i].src" width="200" height="200">
+                                @if (show[b])
+                                {
 
-                                    }
+                                    <br />
+                                    <ul class="ks-cboxtagsExerciseSub">
+                                        <li>
+                                            <label>
+                                                Muskel : @exercisesGen[i].muscle_Targeted <br />
+                                                Utstyr : @exercisesGen[i].equipment_Type <br />
+                                                @exercisesGen[i].repsSets <br />
+                                                @exercisesGen[i].rest<br />
+                                                @exercisesGen[i].info
+
+
+
+                                                @if (@exercisesGen[i].video != null)
+                                                {
+                                                    <a href="@exercisesGen[i].video" target="_blank" rel="noopener noreferrer"> Instruksjonsvideo </a>
+
+
+
+                                                }
+                                                <br />
+                                                <br />
+                                                <img src="@exercisesGen[i].src" width="200" height="200">
+                                            </label>
+                                        </li>
+                                    </ul>
+
+
+                                }
 
                             </div>
                         </div>
@@ -83,8 +91,4 @@
     }
 </CascadingValue>
 
-@code {
-    public Boolean[] show { get; set; } = new bool[50];
-
-}
 

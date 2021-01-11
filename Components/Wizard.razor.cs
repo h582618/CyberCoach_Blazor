@@ -45,6 +45,8 @@ namespace ccBlazor.Components
 
         public bool IsLastStep { get; set; }
 
+        public bool valid { get; set; }
+
         /// <summary>
         /// Sets the <see cref="ActiveStep"/> to the previous Index
         /// </summary>
@@ -62,7 +64,6 @@ namespace ccBlazor.Components
         {
             if (ActiveStepIx < Steps.Count - 1)
                 SetActive(Steps[(Steps.IndexOf(ActiveStep) + 1)]);
-                Console.WriteLine($"{nav.BaseUri}/#DemoWizard");
                 nav.NavigateTo($"{nav.BaseUri}/om_deg#DemoWizard");
 
 

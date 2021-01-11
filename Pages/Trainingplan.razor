@@ -3,37 +3,67 @@
 @inject PersonInf_Model ViewModel
 
 
-@if (ViewModel.submitted)
-{
-<fieldset class="border p-8">
-    <div class="containerBody">
-        <h3>Treningsplan for @ViewModel.name </h3>
-        <h4> Mål @findGoal(ViewModel.weightLoss, ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h4>
-        <p> Periode: 4 uker</p>
+    @if (ViewModel.submitted)
+    {
+<div class="trainingContainer">
+    <div class="info">
+        <div class="clientInfo">
+            <fieldset class="border p-8">
+                <div class="containerBody infoText">
+                    <h3> <b> Klient: </b> @ViewModel.name </h3>
+                    <h3> <b> Nivå: </b> @findLevel(ViewModel.experienceLevel) </h3>
+                    <h3> <b> Mål </b>: @findGoal(ViewModel.weightLoss, ViewModel.fatLoss, ViewModel.muscleIncrease, ViewModel.maintenance) </h3>
+                    <h3> <b> Periode: </b> 12 uker</h3>
+                    <h3>  <b> Antall dager: </b> @ViewModel.trainingDays </h3>
+                </div>
+            </fieldset>
+        </div>
+        <div class="splitInfo">
+            <fieldset class="border p-8">
+                <div class="containerBody">
+                    <h5> 4 dagers Upper Lower split  </h5>
+                    <p>
+                        The upper/lower split is a type of workout schedule that divides the   <br />
+                        body up into just two groups: upper body and lower body.
+                        <br />
+                        Each group is then trained separately on its own day.
+
+                    </p>
+                </div>
+            </fieldset>
+        </div>
     </div>
-</fieldset>
-<div class="card-body">
-    <div class="containerBody">
-        @if (ViewModel.trainingDays < 4 && ViewModel.trainingDays > 1)
-        {
-
-            <ul class="ks-cboxtags4">
-                @{
-                    for (int b = 1; b < 5; b++)
-                    {
-                        <li>
-                            <input type="radio" id="@b" value="@b"
-                                   @onchange=@((_e) => week = Int16.Parse(_e.Value.ToString()))
-                                   checked=@(week == b) />
-                            <label for="@b">@b</label>
-                        </li>
-                    }
-                }
-            </ul>
+    @if(ViewModel.trainingDays > 5)
+    {
+        exerciseInfo = "exercisesInfo1";
+    }
+        <div class="@exerciseInfo">
             <br />
+            <div class="containerBody3">
+                @if (ViewModel.trainingDays < 4 && ViewModel.trainingDays > 2)
+                {
+                    <h6 class="dayHeader"> Uke </h6>
+                    <ul class="ks-cboxtags4" style="text-align:left;">
+                        @{
+                            classname = "containerBody4";
+                            for (int b = 1; b < 5; b++)
+                            {
+                                <li>
+                                    <input type="radio" id="@b" value="@b"
+                                           @onchange=@((_e) => week = Int16.Parse(_e.Value.ToString()))
+                                           checked=@(week == b) />
+                                    <label for="@b">@b</label>
+                                </li>
+                            }
+                        }
+                    </ul>
+                    <br />
+                }
+            </div>
+            <div class="@classname">
 
-                    }   
-                <ul class="ks-cboxtags4">
+                <h6 class="dayHeader"> Ukedag </h6>
+                <ul class="ks-cboxtags4" style="text-align:left;">
                     @{ int i = 1;
                         foreach (String t in ViewModel.preferedDays)
                         {
@@ -50,72 +80,101 @@
                 </ul>
                 <br />
             </div>
+            <GenerateExercise experienceLevel="@ViewModel.experienceLevel" show="@(new bool[50])" days="@ViewModel.trainingDays" currentDay="currentDayInt" week="week"> </GenerateExercise>
         </div>
-        <GenerateExercise experienceLevel="@ViewModel.experienceLevel" days="@ViewModel.trainingDays" currentDay="currentDayInt" week="week"> </GenerateExercise>
-                        } else
-                        {
-                           <RedirectToAboutMe />
-                        }
-        @code {
-            public int currentDayInt { get; set; } = 1;
+</div>
+    }
+    else
+    {
+    <RedirectToAboutMe />
+    }
 
-            public String currentDay { get; set; }
+    @code {
 
-            public int week { get; set; } = 1;
+      
 
-            protected override void OnInitialized()
+        public bool createNew = false;
+
+        public String exerciseInfo = "exercisesInfo";
+
+        public String classname = "containerBody3";
+
+        public int currentDayInt { get; set; } = 1;
+
+        public String currentDay { get; set; }
+
+        public int week { get; set; } = 1;
+
+        protected override void OnInitialized()
+        {
+            if (ViewModel.submitted)
             {
-                if (ViewModel.submitted) {
-                    this.currentDay = ViewModel.preferedDays[0];
-                }
-            }
-
-
-            public void setCurrentDay(String t, int i)
-            {
-                this.currentDay = t;
-                this.currentDayInt = i;
-            }
-
-            String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
-            {
-                if (weightLoss)
-                {
-                    return "Vektnedgang";
-                }
-                else if (fatLoss)
-                {
-                    return "Fett reduksjon";
-                }
-                else if (muscleIncrease)
-                {
-                    return "Muskeløkning";
-                }
-                else
-                {
-                    return "Vedlikehold";
-                }
-            }
-            public String dayToNorwegian(String day)
-            {
-                switch (day)
-                {
-                    case "monday":
-                        return "Mandag";
-                    case "tuesday":
-                        return "Tirsdag";
-                    case "wednesday":
-                        return "Onsdag";
-                    case "thursday":
-                        return "Torsdag";
-                    case "friday":
-                        return "Friday";
-                    case "saturday":
-                        return "Lørdag";
-                    case "sunday":
-                        return "Sunday";
-                    default:
-                        return " ";
-                }
+                this.currentDay = ViewModel.preferedDays[0];
             }
         }
+
+
+        public void setCurrentDay(String t, int i)
+        {
+            this.currentDay = t;
+            this.currentDayInt = i;
+            createNew = true;
+        }
+
+        String findGoal(bool weightLoss, bool fatLoss, bool muscleIncrease, bool maintenance)
+        {
+            if (weightLoss)
+            {
+                return "Vektnedgang";
+            }
+            else if (fatLoss)
+            {
+                return "Fett reduksjon";
+            }
+            else if (muscleIncrease)
+            {
+                return "Muskeløkning";
+            }
+            else
+            {
+                return "Vedlikehold";
+            }
+        }
+
+        String findLevel(int n)
+        {
+            switch (n)
+            {
+                case 1:
+                    return "Nybegynner";
+                case 2:
+                    return "Erfaren";
+                case 3:
+                    return "Viderkommende";
+
+            }
+            return "Ukjent";
+        }
+        public String dayToNorwegian(String day)
+        {
+            switch (day)
+            {
+                case "monday":
+                    return "Mandag";
+                case "tuesday":
+                    return "Tirsdag";
+                case "wednesday":
+                    return "Onsdag";
+                case "thursday":
+                    return "Torsdag";
+                case "friday":
+                    return "Friday";
+                case "saturday":
+                    return "Lørdag";
+                case "sunday":
+                    return "Sunday";
+                default:
+                    return " ";
+            }
+        }
+    }
